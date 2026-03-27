@@ -1,0 +1,80 @@
+body{
+    background:#eee;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* title */
+.wishlist-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    margin:20px 0;
+}
+
+/* card */
+.wish-card{
+    background:#ff003c;
+    border-radius:20px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:15px;
+    color:#fff;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.wish-card{
+    animation: infinite 10s;
+}
+
+/* image */
+.wish-card img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+/* text */
+.wish-content h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+.wish-content p{
+    margin:5px 0 0;
+    font-size:14px;
+    opacity:.9;
+}
+
+/* mobile spacing bottom nav */
+.wishlist-page{
+    padding-bottom:90px;
+}
+
+
+/* INITIAL STATE */
+.wish-card {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    filter: blur(6px);
+    transition: 
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.7s ease,
+        filter 0.7s ease;
+}
+
+/* WHEN VISIBLE */
+.wish-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* SUBTLE HOVER (extra premium feel) */
+.wish-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}

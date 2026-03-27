@@ -1,0 +1,314 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  padding-right: 0px !important;
+}
+
+
+/* =========================
+   FILTER SECTION
+========================= */
+
+.categories {
+  background: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.category-link {
+  display: inline-block;
+  margin: 0 12px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: rgb(255, 0, 60);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-link:hover,
+.category-link.active {
+  background: rgb(255, 0, 60);
+  color: #fff;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.featured-section h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.third-inner-text {
+  max-width: 700px;
+  margin: auto;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CARD DESIGN
+========================= */
+
+.cake-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cake-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+
+/* =========================
+   IMAGE SECTION
+========================= */
+
+.cake-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.cake-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.4s ease;
+}
+
+.cake-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   STATUS DOT
+========================= */
+
+.status-dot {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 12px;
+  height: 12px;
+  background: #28a745;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 2;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.cake-content {
+  /* padding: 15px; */
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cake-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.cake-price {
+  color: rgb(255, 0, 60);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cake-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  font-size: 14px;
+  color: #f5b400;
+}
+
+.rating span {
+  color: #555;
+  font-size: 13px;
+}
+
+.cake-footer i {
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(255, 0, 60);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+  .category-link {
+    margin: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .third-inner-text {
+    font-size: 14px;
+  }
+
+}
+
+/* MOBILE APP */
+.mobile-app { display: none; }
+
+/* HEADER */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgb(255,0,60);
+  display: flex;
+  justify-content: space-between;
+  padding:0px 19px !important;
+  
+  z-index: 1000;
+}
+
+.mobile-header .logo { width: 80px; }
+.mobile-header i { color: #fff; font-size: 22px; margin-left: 12px; }
+
+/* HERO */
+.mobile-hero {
+  height: 100vh;
+  background: url('./assets/image/hero.jpg') center/cover no-repeat;
+  margin-top: 60px;
+}
+
+.mobile-hero .overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.mobile-hero button {
+  background: rgb(255,0,60);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+}
+
+/* MOBILE UI ONLY */
+.mobile-app { display: none; }
+
+/* HEADER */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgb(255,0,60);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  z-index: 9999;
+}
+
+.mobile-header .logo { width: 80px; }
+.mobile-header i { color: #fff; font-size: 22px; margin-left: 12px; }
+
+/* BOTTOM NAV */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgb(255,0,60);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  z-index: 9999;
+}
+
+.nav-item i {
+  color: #fff;
+  font-size: 22px;
+}
+
+/* CATEGORY PANEL */
+.mobile-category {
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+  background: #fff;
+  display: none;
+  padding: 15px;
+  text-align: center;
+  z-index: 9999;
+}
+
+/* SEARCH */
+.mobile-search {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  display: none;
+  background: #fff;
+  padding: 10px;
+  z-index: 9999;
+}
+
+/* SHOW ONLY MOBILE */
+@media (max-width:768px){
+
+  .mobile-app { display: block; }
+
+  /* IMPORTANT: hide old UI */
+  .site-header,
+  .nav-bar {
+    display: none !important;
+  }
+
+}
+
+.nav-item.active i {
+  color: #ffffff;
+}
+

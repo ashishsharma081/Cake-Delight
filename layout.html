@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- ══════════════ CSS ══════════════ -->
+  <style>
+    :root {
+      --green-dark: #2e7d32;
+      --green-pale: #e8f5e9;
+      --green-mid:  #43a047;
+      --yellow:     #fdd835;
+      --yellow-light: #fff9c4;
+      --gray:       #666;
+      --dark:       #1a1a1a;
+    }
+
+    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar { background: #fff; padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+    .filter-btn { padding: 8px 20px; border-radius: 30px; border: 2px solid #e0e0e0; background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.3s; color: var(--gray); }
+    .filter-btn:hover, .filter-btn.active { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+
+    /* ── SECTION HEADING ── */
+    .section-heading-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+
+    /* ── PRODUCT CARD ── */
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      cursor: pointer;
+      transition: 0.3s;
+      height: 100%;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.13); }
+    .product-card .card-img-wrap { background: #f5f5f5; padding: 20px; text-align: center; }
+    .product-card .card-img-wrap img { height: 180px; object-fit: contain; width: 100%; border-radius: 10px; }
+    .product-card .card-body-inner { padding: 15px; }
+    .product-card .cat-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; }
+    .badge-chemical { background: #e3f2fd; color: #1565c0; }
+    .badge-seed     { background: #e8f5e9; color: #2e7d32; }
+    .badge-upcoming { background: #fff3e0; color: #e65100; }
+    .product-card .card-title-text { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .product-card .card-desc { font-size: 13px; color: var(--gray); line-height: 1.5; margin-bottom: 10px; }
+    .product-card .card-price { font-size: 16px; font-weight: 700; color: #e53935; }
+    .product-card .card-footer-row { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+    .product-card .card-footer-row span { font-size: 12px; color: var(--gray); }
+
+    /* ── UPCOMING CARD ── */
+    .upcoming-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); cursor: pointer; transition: 0.3s; height: 100%; }
+    .upcoming-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.13); }
+    .upcoming-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--yellow-light); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #e65100; margin-bottom: 14px; }
+
+    /* ── PRODUCT DETAIL PAGE ── */
+    .pd-wrapper { background: #fff; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); padding: 30px; margin: 20px 0; }
+    .pd-img-box img { width: 100%; border-radius: 20px; object-fit: contain; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-height: 350px; }
+    .pd-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+    .pd-title { font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .pd-price { font-size: 24px; font-weight: 700; color: #e53935; margin-bottom: 16px; }
+    .pd-price span { font-size: 14px; color: #888; font-weight: 400; margin-left: 6px; }
+    .pd-features { list-style: none; padding: 0; margin-bottom: 20px; }
+    .pd-features li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333; }
+    .pd-features li i { color: #4caf50; font-size: 17px; }
+    .pd-info-item { background: #f9f9f9; border-radius: 12px; padding: 12px 15px; display: flex; align-items: center; gap: 10px; }
+    .pd-info-item i { font-size: 20px; color: var(--green-mid); }
+    .pd-info-item div span { display: block; font-size: 11px; color: #999; }
+    .pd-info-item div strong { font-size: 14px; color: #222; }
+    .pd-btn { padding: 11px 26px; border-radius: 30px; border: none; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; }
+    .pd-btn-primary { background: var(--green-mid); color: #fff; }
+    .pd-btn-primary:hover { background: var(--green-dark); }
+    .pd-btn-outline { background: transparent; border: 2px solid var(--green-mid); color: var(--green-mid); }
+    .pd-btn-outline:hover { background: var(--green-pale); }
+    .pd-back-btn { background: #f5f5f5; border: none; padding: 10px 22px; border-radius: 30px; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #333; transition: 0.3s; }
+    .pd-back-btn:hover { background: #e0e0e0; }
+    .pd-related-card { background: #f9f9f9; border-radius: 15px; padding: 12px; text-align: center; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
+    .pd-related-card:hover { border-color: var(--green-mid); background: var(--green-pale); transform: translateY(-3px); }
+    .pd-related-card img { width: 100%; height: 90px; object-fit: contain; border-radius: 10px; }
+    .pd-related-card p { font-size: 12px; font-weight: 600; margin: 8px 0 0; color: #333; }
+
+    /* ── HIDDEN ── */
+    .section-block { transition: 0.3s; }
+    .d-none-filter { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ FILTER BAR ══════════════ -->
+  <section class="filter-bar">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="chemical">Agro Chemicals</button>
+        <button class="filter-btn" data-filter="seed">Vegetable Seeds</button>
+        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ MAIN CONTENT ══════════════ -->
+  <section class="py-5">
+    <div class="container">
+
+      <!-- ── PRODUCT DETAIL VIEW (shared) ── -->
+      <div id="product-view" style="display:none;"></div>
+
+      <!-- ══ AGRO CHEMICALS SECTION ══ -->
+      <div class="section-block mb-5" data-section="chemical">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="section-heading-icon" style="background:var(--green-pale); color:var(--green-dark);">
+            <i class="fas fa-flask"></i>
+          </div>
+          <div>
+            <h3 style="font-family:'Georgia',serif; font-size:1.6rem; color:var(--green-dark); margin:0;">Agro Chemicals</h3>
+            <p style="font-size:0.85rem; color:var(--gray); margin:0;">Powerful solutions for crop protection & growth</p>
+          </div>
+        </div>
+        <div class="row g-4" id="chemical-list">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ══ VEGETABLE SEEDS SECTION ══ -->
+      <div class="section-block mb-5" data-section="seed">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="section-heading-icon" style="background:var(--yellow-light); color:#e65100;">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div>
+            <h3 style="font-family:'Georgia',serif; font-size:1.6rem; color:var(--green-dark); margin:0;">Vegetable Seeds</h3>
+            <p style="font-size:0.85rem; color:var(--gray); margin:0;">High-germination, disease-resistant hybrid varieties</p>
+          </div>
+        </div>
+        <div class="row g-4" id="seed-list">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+      <!-- ══ UPCOMING SECTION ══ -->
+      <div class="section-block mb-5" data-section="upcoming">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="section-heading-icon" style="background:#fff3e0; color:#e65100;">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div>
+            <h3 style="font-family:'Georgia',serif; font-size:1.6rem; color:var(--green-dark); margin:0;">Upcoming Products</h3>
+            <p style="font-size:0.85rem; color:var(--gray); margin:0;">New innovations launching soon – stay tuned!</p>
+          </div>
+        </div>
+        <div class="row g-4" id="upcoming-list">
+          <!-- Cards injected by JS -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ══════════════ JS ══════════════ -->
+  <script>
+
+    /* ══ PRODUCT DATA ══ */
+
+    var chemicalProducts = [
+      {
+        id: 'bio-stimulants', name: 'Bio Stimulants', img: './assets/image/Bio Fertilizer.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹299', unit: 'per bottle (500ml)',
+        desc: 'Natural formulations that activate plant metabolism and boost crop yield.',
+        features: ['Activates Plant Metabolism', 'Improves Stress Tolerance', 'Enhances Nutrient Uptake', 'Boosts Crop Yield up to 30%', 'Safe for All Crops'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Bio-based' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '7-10 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '2ml / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '500ml' }
+        ]
+      },
+      {
+        id: 'fungicides', name: 'Fungicides', img: './assets/image/fungicide.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹349', unit: 'per packet (250g)',
+        desc: 'Broad-spectrum fungicidal solutions for complete crop protection.',
+        features: ['Controls Blight & Mildew', 'Prevents Rust & Rot', 'Long-lasting Protection', 'Systemic & Contact Action', 'Safe for Environment'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Systemic' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '14-21 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '2g / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '250g' }
+        ]
+      },
+      {
+        id: 'insecticides', name: 'Insecticides', img: './assets/image/Inential.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹399', unit: 'per bottle (250ml)',
+        desc: 'Effective insecticides controlling sucking and chewing pests.',
+        features: ['Controls Sucking Pests', 'Kills Chewing & Boring Insects', 'Fast Knockdown Action', 'Minimal Impact on Beneficials', 'Suitable for All Crops'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Contact' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '10-15 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '1ml / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '250ml' }
+        ]
+      },
+      {
+        id: 'growth-promoters', name: 'Growth Promoters', img: './assets/image/growth promoter.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹279', unit: 'per bottle (500ml)',
+        desc: 'Hormonal formulas for stronger stems, higher flowering and fruit set.',
+        features: ['Stronger Stems & Branching', 'Higher Flowering Rate', 'Better Fruit Setting', 'Improves Crop Quality', 'Works on All Vegetables'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Hormonal' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '5-7 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '1.5ml / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '500ml' }
+        ]
+      },
+      {
+        id: 'micronutrients', name: 'Micronutrients', img: './assets/image/micronutrients.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹249', unit: 'per packet (500g)',
+        desc: 'Chelated micronutrient blends that correct deficiencies visibly.',
+        features: ['Zinc, Boron, Iron, Manganese', 'EDTA Chelated Formula', 'Corrects Deficiencies Fast', 'Improves Plant Health', 'Water Soluble'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Chelated' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '5-10 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '3g / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '500g' }
+        ]
+      },
+      {
+        id: 'plant-protection', name: 'Plant Protection', img: './assets/image/plante protection.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹329', unit: 'per bottle (500ml)',
+        desc: 'Complete plant health management from root to leaf.',
+        features: ['Bactericides & Acaricides', 'Nematicide Action', 'Root to Leaf Protection', 'Prevents Soil Diseases', 'Broad Spectrum'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Broad Spectrum' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '10-14 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '2ml / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '500ml' }
+        ]
+      },
+      {
+        id: 'khanzer', name: 'Khanzer', img: './assets/image/khnazar.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹359', unit: 'per bottle (250ml)',
+        desc: 'Advanced formula for complete crop protection and disease control.',
+        features: ['Advanced Protection Formula', 'Controls Multiple Diseases', 'Fast Acting', 'Long Residual Effect', 'Safe for Farmers'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Advanced' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '12-18 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '1ml / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '250ml' }
+        ]
+      },
+      {
+        id: 'bio-fungi', name: 'Bio Fungi', img: './assets/image/bio fungi.png',
+        badge: 'Agro Chemical', badgeClass: 'badge-chemical', price: '₹289', unit: 'per packet (250g)',
+        desc: 'Bio-based fungicide for organic and integrated farming.',
+        features: ['100% Bio-based Formula', 'Controls Fungal Diseases', 'Safe for Environment', 'No Chemical Residue', 'Suitable for Organic Farming'],
+        info: [
+          { icon: 'ri-flask-line',    label: 'Type',        value: 'Bio-based' },
+          { icon: 'ri-time-line',     label: 'Effect',      value: '7-14 Days' },
+          { icon: 'ri-drop-line',     label: 'Dose',        value: '3g / Litre' },
+          { icon: 'ri-scales-line',   label: 'Pack Size',   value: '250g' }
+        ]
+      }
+    ];
+
+    var seedProducts = [
+      {
+        id: 'tomato', name: 'Tomato Seeds', img: './assets/image/Tomato Seeds.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹149', unit: 'per packet (10g)',
+        desc: 'High yield hybrid tomato with smooth skin and early maturity.',
+        features: ['Long and Round Tomato Varieties', 'Smooth Skin, High Yield', 'Early Maturity & High Performance', 'Disease Resistant Plants', 'Suitable for All Seasons'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '60-70 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'All Season' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '10g / Packet' }
+        ]
+      },
+      {
+        id: 'carrot', name: 'Carrot Seeds', img: './assets/image/carrot packet.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹129', unit: 'per packet (5g)',
+        desc: 'Sweet and tender carrot seeds with high vitamin content.',
+        features: ['Sweet & Tender Carrots', 'Smooth Size, High Yield', 'Early Harvest & High Performance', 'Long Root Variety', 'Rich in Vitamins'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '70-80 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'Winter' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '5g / Packet' }
+        ]
+      },
+      {
+        id: 'cucumber', name: 'Cucumber Seeds', img: './assets/image/cucumber seeds.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹139', unit: 'per packet (5g)',
+        desc: 'Crisp uniform cucumbers with high market demand.',
+        features: ['Uniform Bright Green Cucumbers', 'Smooth, Crisp & High Yield', 'Early Harvest & High Performance', 'Disease Resistant', 'High Market Demand'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '45-55 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'Summer' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '5g / Packet' }
+        ]
+      },
+      {
+        id: 'beans', name: 'Beans Seeds', img: './assets/image/Beans Seeds.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹119', unit: 'per packet (20g)',
+        desc: 'Fast growing beans with tender and tasty pods.',
+        features: ['Long & Round Beans Variety', 'Fast Growing & High Yield', 'Early Maturity & High Performance', 'Tender & Tasty Pods', 'Suitable for All Regions'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '50-60 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'All Season' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '20g / Packet' }
+        ]
+      },
+      {
+        id: 'carrot2', name: 'Carrot Seeds (Premium)', img: './assets/image/carrot seed.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹159', unit: 'per packet (5g)',
+        desc: 'Premium hybrid carrot with high germination rate.',
+        features: ['Long and Round Major Varieties', 'Smooth Size, High Yield', 'Early Maturity & High Performance', 'Premium Quality Seeds', 'High Germination Rate'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Premium Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '65-75 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'Winter' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '5g / Packet' }
+        ]
+      },
+      {
+        id: 'brinjal', name: 'Brinjal Seeds', img: './assets/image/brinjal seeds.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹129', unit: 'per packet (5g)',
+        desc: 'Glossy attractive brinjal with disease tolerance.',
+        features: ['Long and Round Major Brinjal Varieties', 'Smooth Size, High Yield', 'Early Maturity & High Performance', 'Glossy & Attractive Fruits', 'Disease Tolerant'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '55-65 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'All Season' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '5g / Packet' }
+        ]
+      },
+      {
+        id: 'bottle', name: 'Bitter Gourd Seeds', img: './assets/image/Bettur Gourd Seed.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹139', unit: 'per packet (10g)',
+        desc: 'Uniform dark green bitter gourd with high nutritional value.',
+        features: ['Long and Round Bitter Gourd Varieties', 'Smooth Size, High Yield', 'Early Maturity & High Performance', 'Uniform Dark Green Fruits', 'High Nutritional Value'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '55-65 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'Summer' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '10g / Packet' }
+        ]
+      },
+      {
+        id: 'onion', name: 'Onion Seeds', img: './assets/image/Onion Seeds.png',
+        badge: 'Vegetable Seed', badgeClass: 'badge-seed', price: '₹149', unit: 'per packet (5g)',
+        desc: 'Strong pungency onion seeds with good storage quality.',
+        features: ['Long and Round Onion Varieties', 'Smooth Skin, High Yield', 'Early Maturity & High Performance', 'Strong Pungency & Good Storage', 'Export Quality'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',     value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Maturity', value: '120-140 Days' },
+          { icon: 'ri-map-pin-line',  label: 'Season',   value: 'Rabi' },
+          { icon: 'ri-scales-line',   label: 'Weight',   value: '5g / Packet' }
+        ]
+      }
+    ];
+
+    var upcomingProducts = [
+      {
+        id: 'bio-pesticides', name: 'Bio Pesticides', img: '', icon: 'fas fa-dna',
+        badge: 'Upcoming', badgeClass: 'badge-upcoming', price: 'Coming Soon', unit: '',
+        desc: '100% organic bio-pesticide range from pure natural botanical extracts – zero chemical residue.',
+        features: ['100% Organic Formula', 'Zero Chemical Residue', 'Safe for Farmers & Environment', 'Botanical Extracts Based', 'Broad Spectrum Action'],
+        info: [
+          { icon: 'ri-flask-line',  label: 'Type',   value: 'Organic' },
+          { icon: 'ri-time-line',   label: 'Launch', value: 'Q3 2025' },
+          { icon: 'ri-leaf-line',   label: 'Origin', value: 'Botanical' },
+          { icon: 'ri-award-line',  label: 'Grade',  value: 'Premium' }
+        ]
+      },
+      {
+        id: 'hybrid-pepper', name: 'Hybrid Pepper Seeds', img: '', icon: 'fas fa-leaf',
+        badge: 'Upcoming', badgeClass: 'badge-upcoming', price: 'Coming Soon', unit: '',
+        desc: 'High-yielding hybrid capsicum and chilli pepper seeds with disease tolerance.',
+        features: ['High Yield Hybrid Variety', 'Disease Tolerant', 'Good Market Appeal', 'Uniform Fruit Size', 'All Season Variety'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',   value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Launch', value: 'Q3 2025' },
+          { icon: 'ri-map-pin-line',  label: 'Season', value: 'All Season' },
+          { icon: 'ri-award-line',    label: 'Grade',  value: 'Premium' }
+        ]
+      },
+      {
+        id: 'nano-fertilizers', name: 'Nano Fertilizers', img: '', icon: 'fas fa-tint',
+        badge: 'Upcoming', badgeClass: 'badge-upcoming', price: 'Coming Soon', unit: '',
+        desc: 'Next-gen nano-technology fertilizers for enhanced cellular absorption.',
+        features: ['Nano Technology Based', 'Enhanced Cell Absorption', 'Reduces Fertilizer Wastage', 'Faster Plant Response', 'Eco-Friendly Formula'],
+        info: [
+          { icon: 'ri-flask-line',  label: 'Type',   value: 'Nano-tech' },
+          { icon: 'ri-time-line',   label: 'Launch', value: 'Q4 2025' },
+          { icon: 'ri-drop-line',   label: 'Form',   value: 'Liquid' },
+          { icon: 'ri-award-line',  label: 'Grade',  value: 'Next-Gen' }
+        ]
+      },
+      {
+        id: 'hybrid-spinach', name: 'Hybrid Spinach Seeds', img: '', icon: 'fas fa-spa',
+        badge: 'Upcoming', badgeClass: 'badge-upcoming', price: 'Coming Soon', unit: '',
+        desc: 'Fast-growing dark-green spinach hybrids with bolt resistance.',
+        features: ['Fast Growing Variety', 'Dark Green Leaves', 'Bolt Resistant', 'Year-Round Cultivation', 'High Nutrition Value'],
+        info: [
+          { icon: 'ri-seedling-line', label: 'Type',   value: 'Hybrid' },
+          { icon: 'ri-time-line',     label: 'Launch', value: 'Q4 2025' },
+          { icon: 'ri-map-pin-line',  label: 'Season', value: 'All Season' },
+          { icon: 'ri-award-line',    label: 'Grade',  value: 'Premium' }
+        ]
+      }
+    ];
+
+    /* ══ RENDER CARDS ══ */
+    function renderCards(products, containerId) {
+      var container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      products.forEach(function(p) {
+        var imgHTML = p.img
+          ? '<img src="' + p.img + '" alt="' + p.name + '">'
+          : '<div style="height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#ccc;"><i class="' + (p.icon || 'fas fa-box') + '"></i></div>';
+
+        var col = document.createElement('div');
+        col.className = 'col-sm-6 col-lg-4 col-xl-3';
+        col.innerHTML =
+          '<div class="product-card h-100" onclick="showDetail(\'' + p.id + '\')">' +
+            '<div class="card-img-wrap">' + imgHTML + '</div>' +
+            '<div class="card-body-inner">' +
+              '<span class="cat-badge ' + p.badgeClass + '">' + p.badge + '</span>' +
+              '<div class="card-title-text">' + p.name + '</div>' +
+              '<p class="card-desc">' + p.desc + '</p>' +
+              '<div class="d-flex align-items-center justify-content-between">' +
+                '<span class="card-price">' + p.price + '</span>' +
+                '<span style="font-size:12px;color:var(--gray);">' + (p.unit || '') + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        container.appendChild(col);
+      });
+    }
+
+    /* ══ ALL PRODUCTS MAP ══ */
+    var allProducts = {};
+    function buildMap(arr) {
+      arr.forEach(function(p) { allProducts[p.id] = p; });
+    }
+    buildMap(chemicalProducts);
+    buildMap(seedProducts);
+    buildMap(upcomingProducts);
+
+    /* ══ SHOW DETAIL ══ */
+    function showDetail(id) {
+      var p = allProducts[id];
+      if (!p) return;
+
+      // hide all sections
+      document.querySelectorAll('.section-block').forEach(function(s) { s.style.display = 'none'; });
+      var view = document.getElementById('product-view');
+      view.style.display = 'block';
+      view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      var featureHTML = p.features.map(function(f) {
+        return '<li><i class="ri-checkbox-circle-line"></i> ' + f + '</li>';
+      }).join('');
+
+      var infoHTML = p.info.map(function(item) {
+        return '<div class="col-6 col-md-3"><div class="pd-info-item"><i class="' + item.icon + '"></i><div><span>' + item.label + '</span><strong>' + item.value + '</strong></div></div></div>';
+      }).join('');
+
+      // related — same category
+      var sameType = Object.values(allProducts).filter(function(x) { return x.id !== id && x.badgeClass === p.badgeClass; });
+      var relatedHTML = sameType.map(function(x) {
+        var rImg = x.img
+          ? '<img src="' + x.img + '" alt="' + x.name + '">'
+          : '<div style="height:90px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#ccc;"><i class="' + (x.icon || 'fas fa-box') + '"></i></div>';
+        return '<div class="col-6 col-md-3 col-lg-2"><div class="pd-related-card" onclick="showDetail(\'' + x.id + '\')">' + rImg + '<p>' + x.name + '</p></div></div>';
+      }).join('');
+
+      var imgSection = p.img
+        ? '<img src="' + p.img + '" alt="' + p.name + '" class="img-fluid rounded-4 shadow">'
+        : '<div style="height:300px;background:#f5f5f5;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:5rem;color:#ccc;"><i class="' + (p.icon || 'fas fa-box') + '"></i></div>';
+
+      view.innerHTML =
+        '<button class="pd-back-btn mb-4" onclick="goBack()"><i class="ri-arrow-left-line"></i> Back to Products</button>' +
+
+        '<div class="pd-wrapper">' +
+          '<div class="row g-4 align-items-start">' +
+
+            '<div class="col-md-5">' + imgSection + '</div>' +
+
+            '<div class="col-md-7">' +
+              '<span class="pd-badge"><i class="ri-leaf-line"></i> ' + p.badge + '</span>' +
+              '<div class="pd-title">' + p.name + '</div>' +
+              '<div class="pd-price">' + p.price + (p.unit ? ' <span>' + p.unit + '</span>' : '') + '</div>' +
+              '<ul class="pd-features">' + featureHTML + '</ul>' +
+              '<div class="row g-2 mb-4">' + infoHTML + '</div>' +
+              '<div class="d-flex gap-3 flex-wrap">' +
+                (p.price !== 'Coming Soon' ? '<button class="pd-btn pd-btn-primary"><i class="ri-shopping-cart-line"></i> Order Now</button>' : '<span class="pd-btn" style="background:#fff3e0;color:#e65100;cursor:default;"><i class="ri-time-line"></i> Coming Soon</span>') +
+                '<button class="pd-btn pd-btn-outline"><i class="ri-whatsapp-line"></i> WhatsApp</button>' +
+              '</div>' +
+            '</div>' +
+
+          '</div>' +
+        '</div>' +
+
+        (relatedHTML ? '<h5 class="mt-4 mb-3 fw-bold"><i class="ri-apps-line"></i> Related Products</h5><div class="row g-3">' + relatedHTML + '</div>' : '');
+    }
+
+    /* ══ GO BACK ══ */
+    function goBack() {
+      document.getElementById('product-view').style.display = 'none';
+      var activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+      applyFilter(activeFilter);
+    }
+
+    /* ══ FILTER ══ */
+    function applyFilter(filter) {
+      document.querySelectorAll('.section-block').forEach(function(s) {
+        if (filter === 'all' || s.dataset.section === filter) {
+          s.style.display = 'block';
+        } else {
+          s.style.display = 'none';
+        }
+      });
+    }
+
+    /* ══ FILTER BUTTONS ══ */
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('product-view').style.display = 'none';
+        applyFilter(btn.dataset.filter);
+      });
+    });
+
+    /* ══ INIT ══ */
+    renderCards(chemicalProducts, 'chemical-list');
+    renderCards(seedProducts,     'seed-list');
+    renderCards(upcomingProducts, 'upcoming-list');
+
+    /* ══ DEFAULT — show all sections ══ */
+    applyFilter('all');
+
+  </script>
+
+</body>
+</html>

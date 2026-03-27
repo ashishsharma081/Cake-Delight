@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap/BOOTSTRAP-CSS/bootstrap.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="./CSS/aniversary.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style2.css">
+    <link rel="stylesheet" href="./CSS/birthday-cake.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap"
+        rel="stylesheet" />
+
+    <title>Cake Delight | Aniversary Cakes</title>
+</head>
+
+<body>
+
+    <header class="site-header" id="siteHeader">
+        <!-- 2️⃣ MAIN HEADER -->
+        <div class="main-header">
+            <div class="main-header__inner container">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo" aria-label="BookMyCake Home">
+                    <!-- <span class="logo__book">Book</span><span class="logo__my">my</span><span class="logo__cake">cake</span> -->
+                    <img src="./assets/image/logo2.png" class="img-header-logo" alt="">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="search-bar" role="search">
+                    <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input class="search-bar__input" type="search"
+                        placeholder="Search for cakes, occasion, flavor and more" aria-label="Search cakes" />
+                    <!-- <button class="search-bar__btn" aria-label="Submit search">Search</button> -->
+                </div>
+
+                <!-- Right Contact + Icons -->
+                <div class="header-right">
+                    <!-- Email -->
+                    <a href="mailto:info@bookmycake.co" class="header-contact" aria-label="Email us">
+                        <svg class="header-contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <polyline points="2,4 12,13 22,4" />
+                        </svg>
+                        <span class="header-contact__text">info@bookmycake.co</span>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+919870318105" class="header-contact" aria-label="Call us">
+                        <svg class="header-contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.42 19 19.45 19.45 0 0 1 5 12.59 19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14 15.83l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span class="header-contact__text">+91 9870318105</span>
+                    </a>
+
+                    <!-- Cart Icon -->
+                    <button class="icon-btn" aria-label="View cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+
+                    </button>
+
+                    <!-- User/Account Icon -->
+                    <button class="icon-btn" aria-label="My account">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </button>
+
+                    <!-- Hamburger (mobile only) -->
+                    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3️⃣ NAVIGATION BAR -->
+        <nav class="nav-bar" id="navBar" aria-label="Main navigation">
+            <div class="nav-bar__inner container">
+                <ul class="nav-list" role="list">
+                    <li class="nav-list__item">
+                        <a href="birthday-cake.html" class="nav-link">Birthday Cakes</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="Aniversary.html" class="nav-link">Anniversary</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="corporate.html" class="nav-link">Corporate Cakes</a>
+                    </li>
+                    <li class="nav-list__item">
+                        <a href="pastry.html" class="nav-link">Pastry &amp; Small Cakes</a>
+                    </li>
+                    <li class="nav-list__item nav-list__item--dropdown">
+                        <a href="photo-cake.html" class="nav-link nav-link--arrow" aria-haspopup="true">
+                            Photo Cakes
+                            <svg class="nav-link__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </a>
+                        <div class="dropdown" role="menu">
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Floral Theme</a>
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Rustic Theme</a>
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Unicorn Theme</a>
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Galaxy Theme</a>
+                        </div>
+                    </li>
+                    <li class="nav-list__item nav-list__item--dropdown">
+                        <a href="other.html" class="nav-link nav-link--arrow" aria-haspopup="true">
+                            Others
+                            <svg class="nav-link__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </a>
+                        <div class="dropdown" role="menu">
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Edible Print</a>
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">3D Photo Cake</a>
+                            <a href="#" class="dropdown__item text-dark" role="menuitem">Portrait Cake</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Collection html -->
+    <section class="cd-section container pt-3">
+
+        <!-- <button class="heart">❤</button> -->
+        <div class="container pt-4">
+            <!-- row 1 -->
+            <div class="row g-4 mb-4">
+                <!-- CARD 1-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="strawberry chocolate drip cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake1.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Strawberry Chocolate Drip Cake"
+                                    data-price="1200" data-img="./assets/image/collection birthday cake1.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Strawberry Chocolate Drip Cake"
+                                    data-img="./assets/image/collection birthday cake1.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Strawberry Chocolate Drip Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,200</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="dark Chocolate celebration cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake3.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="dark chocolate celebration cake"
+                                    data-price="1200" data-img="./assets/image/collection birthday cake3.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Dark Chocolate Celebration Cake"
+                                    data-img="./assets/image/collection birthday cake3.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Dark Chocolate Celebration Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,400</div>
+                                <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="kids party theme cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake4.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Kids Party Theme Cake" data-price="1200"
+                                    data-img="./assets/image/collection birthday cake4.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Kids Party Theme Cake"
+                                    data-img="./assets/image/collection birthday cake4.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Kids Party Theme Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹950</div>
+                                <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="classic strawberry drip cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake1.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Classic Strawberry Drip Cake"
+                                    data-price="1200" data-img="./assets/image/collection birthday cake1.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Classic Strawberry Drip Cake"
+                                    data-img="./assets/image/collection birthday cake1.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Classic Strawberry Drip Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,200</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- row 2 -->
+            <div class="row g-4 mb-4">
+                <!-- CARD 1-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="rainbow layer cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake4.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Rainbow Layer Cake" data-price="1800"
+                                    data-img="./assets/image/collection birthday cake4.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Rainbow Layer Cake"
+                                    data-img="./assets/image/collection birthday cake4.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,800" data-note="per piece" data-rating="5.0" data-reviews="150"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Rainbow Layer Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,800</div>
+                                <div class="cake-rating">★★★★★ <span>5.0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="confetti joy cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake5.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Confetti Joy Cake" data-price="1100"
+                                    data-img="./assets/image/collection birthday cake5.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Confetti Joy Cake"
+                                    data-img="./assets/image/collection birthday cake5.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,100" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Confetti Joy Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,100</div>
+                                <div class="cake-rating">★★★★★ <span>4.5</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="pastel ribbon birthday cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake6.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Pastel Ribbon Birthday Cake"
+                                    data-price="1200" data-img="./assets/image/collection birthday cake6.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Pastel Ribbon Birthday Cake"
+                                    data-img="./assets/image/collection birthday cake6.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Pastel Ribbon Birthday Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,200</div>
+                                <div class="cake-rating">★★★★★ <span>4.9</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="chocolate strawberry drip cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake1.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Chocolate Strawberry Drip Cake"
+                                    data-price="1999" data-img="./assets/image/collection birthday cake1.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Chocolate Strawberry Drip Cake"
+                                    data-img="./assets/image/collection birthday cake1.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1999" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Chocolate Strawberry Drip Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,999</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- row 3 -->
+            <div class="row g-4 mb-4">
+                <!-- CARD 1-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="rainbow swirl cupcake set" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake7.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Rainbow Swirl Cupcake Set"
+                                    data-price="1300" data-img="./assets/image/collection birthday cake7.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Rainbow Swirl Cupcake Set"
+                                    data-img="./assets/image/collection birthday cake7.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,300" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Rainbow Swirl Cupcake Set</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,300</div>
+                                <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2-->
+                <div class="col-lg-3 col-md-6 cd-col" 
+                        data-name="Golden Floral Strawberry Cake" 
+                        data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake8.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Golden Floral Strawberry Cake" data-price="1500"
+                                    data-img="./assets/image/collection birthday cake8.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Golden Floral Strawberry Cake"
+                                    data-img="./assets/image/collection birthday cake8.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,500" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Golden Floral Strawberry Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,500</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="Strawberry Cream Layer Cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake9.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Strawberry Cream Layer Cake" data-price="1250"
+                                    data-img="./assets/image/collection birthday cake9.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Strawberry Cream Layer Cake"
+                                    data-img="./assets/image/collection birthday cake9.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,250" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Strawberry Cream Layer Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,250</div>
+                                <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="birthday bash cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake1.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Birthday Bash Cake" data-price="1200"
+                                    data-img="./assets/image/collection birthday cake1.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Birthday Bash Cake"
+                                    data-img="./assets/image/collection birthday cake1.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Birthday Bash Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,200</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- row 4 -->
+            <div class="row g-4 mb-4">
+                <!-- CARD 1-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="Blush Pink Rose Cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake12.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Blush Pink Rose Cake" data-price="1200"
+                                    data-img="./assets/image/collection birthday cake12.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Blush Pink Rose Cake"
+                                    data-img="./assets/image/collection birthday cake12.png" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,200" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Blush Pink Rose Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,200</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="vanilla dream cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/birthday cake2.jpeg">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Vanilla Dream Cake" data-price="1370"
+                                    data-img="./assets/image/birthday cake2.jpeg">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Vanilla Dream Cake"
+                                    data-img="./assets/image/birthday cake2.jpeg" data-eyebrow="🎂 Birthday"
+                                    data-price="₹1,370" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Vanilla Dream Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,370</div>
+                                <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="pink velvet cake" data-cat="birthday">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/birthday cake3.jpeg">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Pink Velvet Cake" data-price="950"
+                                    data-img="./assets/image/birthday cake3.jpeg">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Pink Velvet Cake"
+                                    data-img="./assets/image/birthday cake3.jpeg" data-eyebrow="🎂 Birthday"
+                                    data-price="₹950" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Pink Velvet Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹950</div>
+                                <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CARD 4-->
+                <div class="col-lg-3 col-md-6 cd-col" data-name="Strawberry Choco Cream Cake" data-cat="Aniversary">
+                    <div class="cake-card">
+                        <div class="cake-img">
+                            <img src="./assets/image/collection birthday cake1.png">
+                            <span class="cake-badge">Anniversary</span>
+                            <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                            <div class="cake-hover">
+                                <button class="order-btn order-link" data-name="Strawberry Choco Cream Cake" data-price="1950"
+                                    data-img="./assets/image/collection birthday cake1.png">
+                                    Order Now
+                                </button>
+                                <button class="view-btn quick-view-btn" data-name="Strawberry Choco Cream Cake"
+                                    data-img="./assets/image/collection birthday cake1.png" data-eyebrow="Aniversary"
+                                    data-price="₹1,950" data-note="per piece" data-rating="4.8" data-reviews="230"
+                                    data-bestseller="true"
+                                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special">
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cake-body">
+                            <div class="cake-title">Strawberry Choco Cream Cake</div>
+                            <div class="cake-bottom">
+                                <div class="cake-price">₹1,950</div>
+                                <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Collection Footer-->
+    <footer class="footer-section">
+        <div class="container py-5">
+
+            <div class="row gy-4">
+
+                <!-- Left Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-logo">Cake Delight</h3>
+                    <p class="footer-text">
+                        Cake Delight offers express delivery across Lucknow.<br>
+                        Place your order before 8:00 PM, and we’ll deliver it <br>straight to your doorstep.
+                        We ensure fresh <br> baking, careful packaging, and timely <br>
+                        delivery so that every celebration <br> stays special.
+                    </p>
+
+                    <div class="footer-contact">
+                        <p><i class="ri-mail-line"></i> info@cakedelight.in</p>
+                        <p><i class="ri-phone-line"></i> +91 9876543210</p>
+                    </div>
+                </div>
+
+                <!-- Know Us -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Know US</h5>
+                    <ul class="footer-list">
+                        <li><i class="ri-phone-line"></i> Contact US</li>
+                        <li><i class="ri-map-pin-line"></i> Locate US</li>
+                        <li><i class="ri-image-line"></i> Media</li>
+                        <li><i class="ri-shopping-cart-line"></i> Why Choose Us ?</li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">HELP</h5>
+                    <ul class="footer-list">
+                        <li>Privacy Policy</li>
+                        <li>Customer Satisfaction</li>
+                        <li>Terms & Condition</li>
+                        <li>FAQ’s</li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Social Links</h5>
+                    <ul class="footer-social">
+                        <li><i class="ri-instagram-line"></i> @cake_delight</li>
+                        <li><i class="ri-facebook-circle-fill"></i> Cake Delight</li>
+                        <li><i class="ri-whatsapp-line"></i> +91 9876543210</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            © 2026 cakedelight Pvt Ltd.
+        </div>
+    </footer>
+
+    <!--Whatsapp Fixed Button-->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/9714493873" target="_blank" class="whatsapp-link">
+            <span class="whatsapp-text">Chat with us</span>
+            <span class="whatsapp-icon">
+                <i class="ri-whatsapp-line"></i>
+            </span>
+        </a>
+    </div>
+
+    <!-- ══════════ QUICK VIEW MODAL ══════════ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box" id="modalBox">
+            <button class="modal-close" id="modalCloseBtn">✕</button>
+            <div class="modal-left">
+                <div class="modal-img-frame" id="modalImgFrame">
+                    <img id="modalImg" src="" alt="Cake" style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+              " />
+                </div>
+                <div class="modal-badges" id="modalBadges"></div>
+            </div>
+            <div class="modal-right">
+                <div class="modal-eyebrow" id="modalEyebrow">🎂 Birthday</div>
+                <h2 class="modal-title" id="modalTitle">Cake Name</h2>
+                <div class="modal-rating-row" id="modalRating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-num">4.8</span>
+                    <span class="rating-count">(230 reviews)</span>
+                    <span class="rating-badge">🏆 Bestseller</span>
+                </div>
+                <div class="modal-price-row">
+                    <span class="modal-price" id="modalPrice">₹1,200</span>
+                    <span class="modal-price-note" id="modalPriceNote">per piece</span>
+                </div>
+                <ul class="modal-features" id="modalFeatures"></ul>
+                <div class="modal-specs-wrap">
+                    <p class="specs-heading">Product Details</p>
+                    <div class="modal-specs" id="modalSpecs"></div>
+                </div>
+                <div class="modal-order-row">
+                    <div class="qty-control">
+                        <button class="qty-btn" id="qtyMinus">−</button>
+                        <span class="qty-val" id="qtyVal">1</span>
+                        <button class="qty-btn" id="qtyPlus">+</button>
+                    </div>
+                    <button class="btn-order-now">🛒 Order Now</button>
+                    <button class="btn-whatsapp">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        WhatsApp
+                    </button>
+                </div>
+                <div class="modal-delivery-note">
+                    <span>🚚 Order before 2 PM for <strong>same-day delivery</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">🛒 Added to cart!</div>
+
+    <!-- Bootstrap JS -->
+    <script src="./assets/bootstrap/BOOTSTRAP-JS/bootstrap.js"></script>
+
+    <!-- Your JS -->
+    <script src="./JS/filter.js"></script>
+    <script src="./JS/header.js"></script>
+    <script src="./JS/collection.js"></script>
+    <script src="./JS/birthday-cake.js"></script>
+    <script src="./JS/catalogue.js"></script>
+</body>
+
+</html>

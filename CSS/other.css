@@ -1,0 +1,212 @@
+/* Wishlist collection active state */
+.icon-btn.wishlisted svg {
+  fill: var(--pink);
+  stroke: var(--pink);
+}
+
+
+/* WIshlist heart */
+
+.heart{
+background: #ffffff;
+border-radius: 50%;
+padding:13px 15px;
+color: rgb(150, 147, 147);
+border: none;
+box-shadow: 2px 4px 15px #ff2e63;
+border-bottom: 2px solid red;
+cursor: pointer;
+transition: all 0.3s ease;
+animation: flash 0.8s;
+
+}
+.heart.active{
+    background: #ffffff;
+    color: #ff2e63;
+    font-size: 15px;
+}
+
+.heart:hover{
+animation: flash 1.4s 1000;
+}
+/* flash animation */
+@keyframes flash {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* card css */
+.cake-card{
+background:#ffffff;
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+}
+.cake-card:hover{
+  transform: translateY(-6px);
+}
+
+/* badge */
+.cake-badge{
+z-index: 1;
+position:absolute;
+top:12px;
+left:12px;
+background:rgb(255,0,60);
+color:rgb(255, 255, 255);
+padding:3px 6px;
+border-radius:20px;
+font-size:10px;
+font-weight:600;
+letter-spacing: 1px;
+}
+
+/* heart */
+.cake-wish{
+z-index: 1;
+position:absolute;
+top:12px;
+right:12px;
+width:36px;
+height:36px;
+border:none;
+border-radius:50%;
+background:#fff;
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.cake-wish.active{
+background:rgb(255, 0,60);
+color:#fff;
+}
+.cake-img{
+  position:relative;
+  overflow:hidden;
+}
+
+.cake-img img{
+  width:100%;
+  display:block;
+}
+.cake-img{
+  position:relative;
+  overflow:hidden;
+}
+
+/* image */
+.cake-img img{
+  width:100%;
+  display:block;
+  transition:0.4s ease;
+}
+
+/* 🔥 PERFECT OVERLAY */
+.cake-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);  /* ⭐ same like second image */
+  opacity:0;
+  transition:0.4s ease;
+  z-index:1;
+}
+
+/* hover overlay */
+.cake-img:hover::before{
+  opacity:1;
+}
+
+/* center buttons */
+.cake-hover{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  opacity:0;
+  transition:0.4s ease;
+  z-index:2;
+}
+
+/* show buttons */
+.cake-img:hover .cake-hover{
+  opacity:1;
+}
+/* hover buttons container */
+.cake-hover{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  opacity:0;
+  transition:0.3s;
+  z-index:2;
+}
+
+
+.cake-img:hover .cake-hover{
+  opacity:1;
+}
+
+/* buttons */
+.order-btn{
+  background:#ff1744;
+  color:white;
+  border:none;
+  padding:12px 26px;
+  border-radius:30px;
+  font-weight:600;
+}
+
+.view-btn{
+  background:rgba(98, 97, 97, 0.65);
+  color:white;
+  border:2px solid white;
+  padding:10px 26px;
+  border-radius:30px;
+}
+
+/* body */
+.cake-body{
+padding:16px;
+}
+
+.cake-title{
+font-size:14px;
+margin-bottom:10px;
+}
+
+.cake-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.cake-price{
+color:#ff2e63;
+font-weight:700;
+font-size:18px;
+}
+
+.cake-rating{
+color:#ffb400;
+font-size:14px;
+}
+
+.cake-rating span{
+color:#555;
+margin-left:4px;
+}
+
+/* Designer Collection icons */
+.designer-collection i {
+  color: rgb(255,0,60);
+  font-size: 22px;
+}
