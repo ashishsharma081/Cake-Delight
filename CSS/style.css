@@ -881,7 +881,7 @@ ul, ol{
 
 /*Hero Section CSS*/
 .hero-section {
-  background-image: url("/assets/image/hero.jpg");
+  background-image: url("../assets/image/hero.jpg");
   position: relative;
   min-height: 75vh;
   display: flex;
