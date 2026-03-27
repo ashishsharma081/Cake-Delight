@@ -215,7 +215,7 @@ body {
 /* HERO */
 .mobile-hero {
   height: 100vh;
-  background: url('./assets/image/hero.jpg') center/cover no-repeat;
+  background: url('../assets/image/hero.jpg') center/cover no-repeat;
   margin-top: 60px;
 }
 
