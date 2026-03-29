@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Delight Account</title>
+  <link rel="stylesheet" href="./assets/bootstrap/BOOTSTRAP-CSS/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/style2.css">
+  <link rel="stylesheet" href="./CSS/app-shell.css">
+  <link rel="stylesheet" href="./CSS/account.css">
+</head>
+<body>
+  <main class="cd-account-page" id="accountPage">
+    <div class="cd-account-wrap">
+      <section class="cd-account-hero">
+        <div class="cd-account-hero__intro">
+          <p class="cd-account-hero__eyebrow">Account centre</p>
+          <h1>Manage your Cake Delight profile in one place.</h1>
+          <p>Update your personal details, keep your delivery address ready for faster checkout, and see the latest cakes you ordered without switching between pages.</p>
+
+          <div class="cd-account-hero__points">
+            <div class="cd-account-hero__point">
+              <strong>Profile edits</strong>
+              <span>Keep your name, email and mobile number ready for order updates.</span>
+            </div>
+            <div class="cd-account-hero__point">
+              <strong>Saved address</strong>
+              <span>Store house number, street, apartment, city, state and pincode for easy ordering.</span>
+            </div>
+            <div class="cd-account-hero__point">
+              <strong>Recent orders</strong>
+              <span>Checkout history appears here automatically after every new order.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cd-account-hero__summary">
+          <div class="cd-account-profile-badge">
+            <span class="cd-account-profile-badge__avatar"><i class="ri-user-smile-line"></i></span>
+            <div class="cd-account-profile-badge__content">
+              <h2 id="accountSummaryName">Cake Delight customer</h2>
+              <p id="accountCompletion">0% profile ready</p>
+            </div>
+          </div>
+
+          <div class="cd-account-summary-grid">
+            <div class="cd-account-summary-item">
+              <span>Contact</span>
+              <p id="accountSummaryContact">Add email and phone for faster checkout updates</p>
+            </div>
+            <div class="cd-account-summary-item">
+              <span>Delivery address</span>
+              <p id="accountSummaryAddress">Add your delivery address</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="cd-account-layout">
+        <div class="cd-account-stack">
+          <article class="cd-account-panel">
+            <div class="cd-account-panel__head">
+              <p class="cd-account-panel__eyebrow">Personal details</p>
+              <h2>Edit profile</h2>
+              <p>Change the details Cake Delight should use for account and order communication.</p>
+            </div>
+
+            <form id="profileForm" class="cd-account-form">
+              <div class="cd-account-form__grid">
+                <div class="cd-account-field cd-account-field--full">
+                  <label for="fullName">Full name</label>
+                  <small>This name can be used on order confirmations and delivery updates.</small>
+                  <input id="fullName" name="fullName" type="text" placeholder="Enter your full name">
+                </div>
+                <div class="cd-account-field">
+                  <label for="email">Email address</label>
+                  <small>Use the email where you want support replies and order details.</small>
+                  <input id="email" name="email" type="email" placeholder="you@example.com">
+                </div>
+                <div class="cd-account-field">
+                  <label for="phone">Phone number</label>
+                  <small>This helps Cake Delight contact you quickly for delivery and custom cake updates.</small>
+                  <input id="phone" name="phone" type="tel" placeholder="+91 98xxxxxx">
+                </div>
+              </div>
+
+              <div class="cd-account-actions">
+                <p class="cd-account-note">These details stay on this device so returning customers can edit them quickly.</p>
+                <button class="cd-account-save" type="submit">Save profile</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="cd-account-panel">
+            <div class="cd-account-panel__head">
+              <p class="cd-account-panel__eyebrow">Delivery details</p>
+              <h2>Saved address</h2>
+              <p>Keep the full address ready so checkout and support conversations become faster.</p>
+            </div>
+
+            <form id="addressForm" class="cd-account-form">
+              <div class="cd-account-form__grid">
+                <div class="cd-account-field">
+                  <label for="houseNo">House number</label>
+                  <small>Add your flat, house or building number for exact delivery.</small>
+                  <input id="houseNo" name="houseNo" type="text" placeholder="House / flat no.">
+                </div>
+                <div class="cd-account-field">
+                  <label for="street">Street</label>
+                  <small>Enter the street, lane or road name.</small>
+                  <input id="street" name="street" type="text" placeholder="Street / lane">
+                </div>
+                <div class="cd-account-field">
+                  <label for="apartment">Apartment</label>
+                  <small>Add apartment, tower or society details if needed.</small>
+                  <input id="apartment" name="apartment" type="text" placeholder="Apartment / building">
+                </div>
+                <div class="cd-account-field">
+                  <label for="area">Area</label>
+                  <small>Locality or nearby area helps the team reach you faster.</small>
+                  <input id="area" name="area" type="text" placeholder="Area / locality">
+                </div>
+                <div class="cd-account-field">
+                  <label for="city">City</label>
+                  <small>City for delivery and support records.</small>
+                  <input id="city" name="city" type="text" placeholder="City">
+                </div>
+                <div class="cd-account-field">
+                  <label for="state">State</label>
+                  <small>State ensures the full address stays complete.</small>
+                  <input id="state" name="state" type="text" placeholder="State">
+                </div>
+                <div class="cd-account-field cd-account-field--full">
+                  <label for="pincode">Pincode</label>
+                  <small>Enter the delivery pincode so the order can be routed correctly.</small>
+                  <input id="pincode" name="pincode" type="text" inputmode="numeric" placeholder="Pincode">
+                </div>
+              </div>
+
+              <div class="cd-account-actions">
+                <p class="cd-account-note">You can update this any time before placing the next order.</p>
+                <button class="cd-account-save" type="submit">Save address</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="cd-account-history">
+            <div class="cd-account-history__head">
+              <p class="cd-account-history__eyebrow">Recent activity</p>
+              <h2>Order history</h2>
+              <p>Every cart checkout is stored here so the customer can revisit recent cake orders quickly.</p>
+            </div>
+
+            <div id="accountOrderHistory" class="cd-history-list"></div>
+          </article>
+        </div>
+
+        <aside class="cd-account-shortcuts">
+          <div class="cd-account-shortcuts__head">
+            <h2>Quick account links</h2>
+            <p>Jump to saved cakes, cart, support and categories from the same account hub.</p>
+          </div>
+
+          <div class="cd-shortcut-list">
+            <a class="cd-shortcut-link" href="app-wishlist.html">
+              <i class="ri-heart-3-line"></i>
+              <span>Open wishlist</span>
+              <i class="ri-arrow-right-s-line"></i>
+            </a>
+            <a class="cd-shortcut-link" href="cart.html">
+              <i class="ri-shopping-cart-2-line"></i>
+              <span>Open cart</span>
+              <i class="ri-arrow-right-s-line"></i>
+            </a>
+            <a class="cd-shortcut-link" href="new-category.html">
+              <i class="ri-layout-grid-line"></i>
+              <span>Browse categories</span>
+              <i class="ri-arrow-right-s-line"></i>
+            </a>
+            <a class="cd-shortcut-link" href="contact.html">
+              <i class="ri-customer-service-2-line"></i>
+              <span>Contact support</span>
+              <i class="ri-arrow-right-s-line"></i>
+            </a>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <div id="mobileShellRoot"></div>
+
+  <script src="./JS/site-shell.js"></script>
+  <script src="./JS/account-page.js"></script>
+</body>
+</html>

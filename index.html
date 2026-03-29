@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Delight</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./assets/bootstrap/BOOTSTRAP-CSS/bootstrap.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/style2.css">
+  <link rel="stylesheet" href="./CSS/app-shell.css">
+  <link rel="stylesheet" href="./CSS/modal.css">
+  <link rel="stylesheet" href="./CSS/wishlist.css">
+  <link rel="stylesheet" href="./CSS/order.css">
+  <link rel="stylesheet" href="./CSS/birthday-cake.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <!-- Section -- Header-->
+  <section class="first-section">
+    <!-- ================= RED HEADER ================= -->
+
+
+    <header class="site-header" id="siteHeader">
+      <!-- 2️ MAIN HEADER -->
+      <div class="main-header">
+        <div class="main-header__inner container">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo" aria-label="BookMyCake Home">
+            <!-- <span class="logo__book">Book</span><span class="logo__my">my</span><span class="logo__cake">cake</span> -->
+            <img src="./assets/image/logo2.png" class="img-header-logo" alt="">
+          </a>
+
+          <!-- Search Bar -->
+          <div class="search-bar" role="search">
+            <svg class="search-bar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input class="search-bar__input" type="search" placeholder="Search for cakes, occasion, flavor and more"
+              aria-label="Search cakes" />
+          </div>
+
+          <!-- Right Contact + Icons -->
+          <div class="header-right">
+            <!-- Email -->
+            <a href="mailto:info@bookmycake.co" class="header-contact" aria-label="Email us">
+              <svg class="header-contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="2,4 12,13 22,4" />
+              </svg>
+              <span class="header-contact__text">info@cakedelight.in</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+919870318105" class="header-contact" aria-label="Call us">
+              <svg class="header-contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.42 19 19.45 19.45 0 0 1 5 12.59 19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14 15.83l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span class="header-contact__text">+91 9336002651</span>
+            </a>
+
+            <!-- Cart Icon -->
+            <button class="icon-btn" aria-label="View cart">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
+
+            </button>
+
+            <!-- User/Account Icon -->
+            <button class="icon-btn" aria-label="My account">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3️⃣ NAVIGATION BAR -->
+      <nav class="nav-bar" id="navBar" aria-label="Main navigation">
+        <div class="nav-bar__inner container">
+          <ul class="nav-list" role="list">
+            <li class="nav-list__item">
+              <a href="birthday-cake.html" class="nav-link">Birthday Cakes</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="Aniversary.html" class="nav-link">Anniversary</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="corporate.html" class="nav-link">Corporate Cakes</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="pastry.html" class="nav-link">Pastry &amp; Small Cakes</a>
+            </li>
+            <li class="nav-list__item nav-list__item--dropdown">
+              <a href="photo-cake.html" class="nav-link nav-link--arrow" aria-haspopup="true">
+                Photo Cakes
+                <svg class="nav-link__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+              <div class="dropdown" role="menu">
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Floral Theme</a>
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Rustic Theme</a>
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Unicorn Theme</a>
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Galaxy Theme</a>
+              </div>
+            </li>
+            <li class="nav-list__item nav-list__item--dropdown">
+              <a href="other.html" class="nav-link nav-link--arrow" aria-haspopup="true">
+                Others
+                <svg class="nav-link__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+              <div class="dropdown" role="menu">
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Edible Print</a>
+                <a href="#" class="dropdown__item text-dark" role="menuitem">3D Photo Cake</a>
+                <a href="#" class="dropdown__item text-dark" role="menuitem">Portrait Cake</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
+
+    <!--Hero Section-->
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1>Get 20% off on your <br> First Order</h1>
+        <p class="pb-5">
+          Celebrate your special moments with our freshly baked cakes, pastries,
+          and complete party essentials. <br> From birthdays to every joyful occasion,
+          we deliver happiness, taste, <br> and quality right to your doorstep.
+        </p>
+      </div>
+      <div class="hero-btn-icon d-flex align-items-center justify-content-center text-white">
+        <div class="hero-btn gap-2 mb-5">
+          <a href="birthday-cake.html">Order Fresh Cake Today
+            <i class="ri-arrow-right-long-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- featured collection -->
+  <section class="cd-section container py-4">
+
+    <div><b>
+        <h1 class="Itailic text-center">Featured Collection</h1>
+      </b></div>
+    <div class="underline mb-4 "></div>
+
+    <div class="text-center ">
+        <p class="mt-4 design-para  pb-3">
+          Every celebration deserves more than just a cake. Our custom creations are designed <br> to match your story — rich in flavor, elegant in design, <br> and unforgettable in every bite.
+        </p>
+      </div>
+
+      <!-- ── ROW 1 ── -->
+        <div class="row g-4 mb-4">
+          <!-- CARD 1 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="birthday bash cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <a href=""
+                  ><img
+                    src="./assets/image/collection birthday cake1.png"
+                    alt="Birthday Bash Cake"
+                /></a>
+                <span class="cake-badge">Birthday</span>
+                <button onclick="addToWishlist('Birthday Bash Cake')">❤️</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Birthday Bash Cake"
+                    data-price="1200"
+                    data-img="./assets/image/collection birthday cake1.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Birthday Bash Cake"
+                    data-img="./assets/image/collection birthday cake1.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1,200"
+                    data-note="per piece"
+                    data-rating="4.8"
+                    data-reviews="230"
+                    data-bestseller="true"
+                    data-features="Fresh cream & chocolate layers|Customizable message on top|Serves 8–10 people|Strawberry garnish included|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🍓 Fresh Berries|✨ Handcrafted|🎂 Birthday Special"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Birthday Bash Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1,200</div>
+                  <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="star sprinkle cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake3.png"
+                  alt="Star Sprinkle Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                   <button
+                    class="order-btn order-link"
+                    data-name="Star Sprinkle Cake"
+                    data-price="799"
+                    data-img="./assets/image/collection birthday cake3.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Star Sprinkle Cake"
+                    data-img="./assets/image/collection birthday cake3.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹799"
+                    data-note="per piece"
+                    data-rating="4.7"
+                    data-reviews="189"
+                    data-bestseller="true"
+                    data-features="Rainbow sprinkle layers|Star-shaped sugar decorations|Serves 10–12 people|Vanilla & butterscotch base|Same-day delivery available"
+                    data-specs="Weight:1.5 kg|Flavour:Vanilla|Serves:10–12|Shelf Life:2 Days"
+                    data-tags="⭐ Star Topped|🌈 Rainbow|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Star Sprinkle Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹799</div>
+                  <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="pastel dream cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake4.png"
+                  alt="Pastel Dream Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Pastel Dream Cake"
+                    data-price="950"
+                    data-img="./assets/image/collection birthday cake4.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Pastel Dream Cake"
+                    data-img="./assets/image/collection birthday cake4.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹950"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="145"
+                    data-bestseller="false"
+                    data-features="Soft pastel color theme|Light whipped cream frosting|Serves 6–8 people|Floral sugar decorations|Same-day delivery available"
+                    data-specs="Weight:750 g|Flavour:Vanilla|Serves:6–8|Shelf Life:2 Days"
+                    data-tags="🌸 Pastel|🌼 Floral|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Pastel Dream Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹950</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="golden choco cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/birthday cake1.jpeg"
+                  alt="Golden Choco Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Golden Choco Cake"
+                    data-price="1800"
+                    data-img="./assets/image/birthday cake1.jpeg"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Golden Choco Cake"
+                    data-img="./assets/image/birthday cake1.jpeg"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1800"
+                    data-note="per piece"
+                    data-rating="4.8"
+                    data-reviews="210"
+                    data-bestseller="true"
+                    data-features="Traditional mithai flavours|Kaju & pista garnish on top|Serves 8–10 people|Festive design decoration|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Mithai|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🍬 Mithai|🥜 Kaju-Pista|🎉 Festive"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Golden Choco Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1800</div>
+                  <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row 1 -->
+
+
+  </section>
+
+  <!-- disigner collection  -->
+  <section class="designer-section bg-white">
+    <div class="text-center">
+      <h2 class=" pt-4 designer-collection"><b class="Itailic"> Designer
+          Collection</b>
+      </h2>
+
+       <div class="underline mb-3"></div>
+
+      <div class="text-center ">
+        <p class="mt-4 design-para  pb-5">
+          “Discover our custom-designed cakes, uniquely crafted to match your ideas,occasions, and emotions, <br>featuring personalized themes, premium ingredients,artistic detailing, <br> and unforgettable flavors for truly special celebrations.”
+        </p>
+      </div>
+    </div>
+
+    <!--ROW -->
+    <div class="container featured-cards pb-5 pt-4">
+      <!-- ── ROW 3 ── -->
+        <div class="row g-4 mb-4">
+          <!-- CARD 1 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="gulab gulkand cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake5.png"
+                  alt="Gulab Gulkand Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                   <button
+                    class="order-btn order-link"
+                    data-name="Gulab Gulkand Cake"
+                    data-price="700"
+                    data-img="./assets/image/collection birthday cake5.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Gulab Gulkand Cake"
+                    data-img="./assets/image/collection birthday cake5.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹700"
+                    data-note="per piece"
+                    data-rating="4.7"
+                    data-reviews="167"
+                    data-bestseller="false"
+                    data-features="Real gulab & gulkand filling|Rose petal decoration on top|Serves 10–12 people|Unique Indian fusion flavour|Same-day delivery available"
+                    data-specs="Weight:1.5 kg|Flavour:Rose|Serves:10–12|Shelf Life:2 Days"
+                    data-tags="🌹 Gulab|🍯 Gulkand|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Gulab Gulkand Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹700</div>
+                  <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="rang birangi barfi cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake6.png"
+                  alt="Rang Birangi Barfi Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Rang Birangi Barfi Cake"
+                    data-price="786"
+                    data-img="./assets/image/collection birthday cake6.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Rang Birangi Barfi Cake"
+                    data-img="./assets/image/collection birthday cake6.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹786"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="132"
+                    data-bestseller="false"
+                    data-features="Colourful barfi layers inside|Vibrant multi-colour design|Serves 6–8 people|Traditional barfi flavour fusion|Same-day delivery available"
+                    data-specs="Weight:750 g|Flavour:Barfi|Serves:6–8|Shelf Life:2 Days"
+                    data-tags="🌈 Colourful|🍬 Barfi|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Rang Birangi Barfi Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹786</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="sone ki chandan cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake9.png"
+                  alt="Sone Ki Chandan Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Sone Ki Chandan Cake"
+                    data-price="1500"
+                    data-img="./assets/image/collection birthday cake9.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Sone Ki Chandan Cake"
+                    data-img="./assets/image/collection birthday cake9.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1500"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="121"
+                    data-bestseller="false"
+                    data-features="Chandan & saffron infused cream|Real gold leaf on top|Serves 6–8 people|Elegant royal design|Same-day delivery available"
+                    data-specs="Weight:750 g|Flavour:Saffron|Serves:6–8|Shelf Life:2 Days"
+                    data-tags="✨ Gold Leaf|🪷 Chandan|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Sone Ki Chandan Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1500</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="choco mewa barsat cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/birthday cake3.jpeg"
+                  alt="Choco Mewa Barsat Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Choco Mewa Barsat Cake"
+                    data-price="850"
+                    data-img="./assets/image/birthday cake3.jpeg"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Choco Mewa Barsat Cake"
+                    data-img="./assets/image/birthday cake3.jpeg"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹850"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="156"
+                    data-bestseller="false"
+                    data-features="Rich chocolate & dry fruit layers|Mewa topping with kaju-badam|Serves 8–10 people|Customizable message|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🍫 Choco|🥜 Mewa|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Choco Mewa Barsat Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹850</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row 3 -->
+
+    </div>
+  </section>
+
+ <!-- family celebration section -->
+  <section class="fourth-section">
+    <div class=" container-fluid p-0">
+      <div class="row g-0 align-items-center p-0">
+
+        <!-- LEFT TEXT -->
+        <div class="col-lg-6 col-md-12 fourth-text">
+          <div class="fourth-text-inner text-center">
+            <h2 class="inner-text-img">
+              Where Every Celebration Tastes Better!!
+            </h2>
+          </div>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="col-lg-6 col-md-12 banner-image bg-success">
+          <img src="./assets/image/cake-delight-banner.jpg" alt="Cake Delight">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fifth Section -- BirthDay & Anniversary Cake -->
+  <section class="fifth-section">
+
+    <div class="fifth-heading">
+      <h2 class=" pt-4 designer-collection text-center pt-4"><b class="Itailic">Birthday & Anniversary</b>
+      </h2>
+
+      <div class="underline mb-3"></div>
+    </div>
+
+    <!--Card 1-->
+    <div class="container pb-5 pt-4">
+       <!-- ── ROW 4 ── -->
+        <div class="row g-4 mb-4">
+          <!-- CARD 1 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="gulabi dulhan cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/collection birthday cake12.png"
+                  alt="Gulabi Dulhan Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                <button
+                    class="order-btn order-link"
+                    data-name="Gulabi Dulhan Cake"
+                    data-price="1600"
+                    data-img="./assets/image/collection birthday cake12.png"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Gulabi Dulhan Cake"
+                    data-img="./assets/image/collection birthday cake12.png"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1,600"
+                    data-note="per piece"
+                    data-rating="4.8"
+                    data-reviews="203"
+                    data-bestseller="true"
+                    data-features="Soft pink bridal theme design|Rose & lychee flavour filling|Serves 8–10 people|Edible flower decoration|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Rose-Lychee|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🌸 Pink Theme|💐 Floral|👰 Bridal"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Gulabi Dulhan Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1,600</div>
+                  <div class="cake-rating">★★★★★ <span>4.8</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="kali raat choco cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/birthday cake2.jpeg"
+                  alt="Kali Raat Choco Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Kali Raat Choco Cake"
+                    data-price="1300"
+                    data-img="./assets/image/birthday cake2.jpeg"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Kali Raat Choco Cake"
+                    data-img="./assets/image/birthday cake2.jpeg"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1,400"
+                    data-note="per piece"
+                    data-rating="4.7"
+                    data-reviews="189"
+                    data-bestseller="true"
+                    data-features="Dark chocolate sponge layers|Midnight black ganache coating|Serves 10–12 people|Customizable message on top|Same-day delivery available"
+                    data-specs="Weight:1.5 kg|Flavour:Dark Choco|Serves:10–12|Shelf Life:2 Days"
+                    data-tags="🍫 Dark Choco|🌙 Midnight|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Kali Raat Choco Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1,400</div>
+                  <div class="cake-rating">★★★★★ <span>4.7</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="choco mewa barsat cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/Birthday cake 4.jpg"
+                  alt="Choco Mewa Barsat Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                  <button
+                    class="order-btn order-link"
+                    data-name="Choco Mewa Barsat Cake"
+                    data-price="999"
+                    data-img="./assets/image/Birthday cake 4.jpg"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Choco Mewa Barsat Cake"
+                    data-img="./assets/image/Birthday cake 4.jpg"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹999"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="156"
+                    data-bestseller="false"
+                    data-features="Rich chocolate & dry fruit layers|Mewa topping with kaju-badam|Serves 8–10 people|Customizable message|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🍫 Choco|🥜 Mewa|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Choco Mewa Barsat Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹999</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="col-lg-3 col-md-6 cd-col"
+            data-name="premium cake"
+            data-cat="birthday"
+          >
+            <div class="cake-card">
+              <div class="cake-img">
+                <img
+                  src="./assets/image/birthday cake 7.jpeg"
+                  alt="Premium Cake"
+                />
+                <span class="cake-badge">Birthday</span>
+                <button class="cake-wish" onclick="toggleWish(this)">♡</button>
+                <div class="cake-hover">
+                <button
+                    class="order-btn order-link"
+                    data-name="Premium Cake"
+                    data-price="1399"
+                    data-img="./assets/image/birthday cake 7.jpeg"
+                  >
+                    Order Now
+                  </button>
+                  <button
+                    class="view-btn quick-view-btn"
+                    data-name="Premium Cake"
+                    data-img="./assets/image/birthday cake 7.jpeg"
+                    data-eyebrow="🎂 Birthday"
+                    data-price="₹1399"
+                    data-note="per piece"
+                    data-rating="4.6"
+                    data-reviews="156"
+                    data-bestseller="false"
+                    data-features="Rich chocolate & dry fruit layers|Mewa topping with kaju-badam|Serves 8–10 people|Customizable message|Same-day delivery available"
+                    data-specs="Weight:1 kg|Flavour:Chocolate|Serves:8–10|Shelf Life:2 Days"
+                    data-tags="🍫 Choco|🥜 Mewa|🎂 Birthday"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-title">Premium Cake</div>
+                <div class="cake-bottom">
+                  <div class="cake-price">₹1399</div>
+                  <div class="cake-rating">★★★★★ <span>4.6</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row 4 -->
+
+       
+    </div>
+
+  </section>
+
+  <!-- Six Section -->
+  <section class="sixth-section">
+    <div class="sixth-heading">
+      <h2>
+        <span class="fm-cambria">Explore Our Categories </span>
+      </h2>
+      <p class="theme-color">
+        Explore our wide range of bakery categories, crafted for every
+        occasion.
+      </p>
+    </div>
+
+    <div class="category-offers">
+
+      <div class="category-item">
+        <div class="category-circle">
+        <a href="pastry.html"><img src="./assets/image/pastry-new.png" alt="Pastries" /></a>
+        </div>
+       <a href="pastry.html"> <p>Pastries</p></a>
+      </div>
+
+      <div class="category-item">
+        <div class="category-circle">
+          <img src="./assets/image/cookies.png" alt="Cookies" />
+        </div>
+        <p>Cookies</p>
+      </div>
+
+      <div class="category-item">
+        <div class="category-circle">
+          <img src="./assets/image/party-essential.png" alt="Party Essential" />
+        </div>
+        <p>Party Essential</p>
+      </div>
+
+      <div class="category-item">
+        <div class="category-circle">
+      <a href="birthday-cake.html"><img src="./assets/image/cake-new.png" alt="Cakes" /> </a>
+        </div>
+      <a href="birthday-cake.html"> <p>Cakes</p></a>
+      </div>
+
+    </div>
+
+    <div class="cat-divider">
+      <div class="cat-divider-dot"></div>
+    </div>
+  </section>
+
+  <!--Seventh Section -- About -->
+  <section class="seventh-section py-5">
+    <div class="container pb-5">
+
+      <!-- Heading -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Why Cake Delight Shop ?</h2>
+        <p class="text-muted">
+          Cake Delight is not just a place to buy cakes – it's where every celebration becomes special.
+        </p>
+      </div>
+
+      <!-- Accordion Wrapper -->
+      <div class="accordion-wrapper mx-auto">
+
+        <div class="accordion" id="cakeAccordion">
+
+          <!-- Accordion 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button text-center justify-content-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#accOne">
+                Fresh & Premium Quality
+              </button>
+            </h2>
+            <div id="accOne" class="accordion-collapse collapse show">
+              <div class="accordion-body text-center">
+                <ul class="center-list">
+                  <li>All cakes are freshly baked.</li>
+                  <li>High-quality ingredients for rich taste.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed text-center justify-content-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#accTwo">
+                Wide Variety of Cakes
+              </button>
+            </h2>
+            <div id="accTwo" class="accordion-collapse collapse">
+              <div class="accordion-body text-center">
+                <ul class="center-list">
+                  <li>Perfect for birthdays & anniversaries.</li>
+                  <li>Chocolate, Vanilla, Red Velvet & custom cakes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed text-center justify-content-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#accThree">
+                Affordable Pricing
+              </button>
+            </h2>
+            <div id="accThree" class="accordion-collapse collapse">
+              <div class="accordion-body text-center">
+                <ul class="center-list">
+                  <li>Premium cakes at reasonable prices.</li>
+                  <li>Great taste with great value.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed text-center justify-content-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#accFour">
+                Customer Satisfaction First
+              </button>
+            </h2>
+            <div id="accFour" class="accordion-collapse collapse">
+              <div class="accordion-body text-center">
+                <ul class="center-list">
+                  <li>Friendly service & trusted quality.</li>
+                  <li>Happy customers are our biggest strength.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Eight Section -- Reviews -->
+  <section class="eight-section py-5">
+    <div class="container">
+
+      <h2 class="text-center fw-bold mb-4">
+        What our Customers say about Cake Delight
+      </h2>
+
+      <div class="review-marquee mt-5 mb-4">
+        <div class="marquee-track">
+
+          <!-- ROW 1 -->
+          <div class="marquee-row">
+            <div class="review-card">
+              <h5>Pranav Shree</h5>
+              <span>a year ago</span>
+              <div class="stars">★☆☆☆☆</div>
+              <p>Delivery is never on time.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Himanshu Gupta</h5>
+              <span>a year ago</span>
+              <div class="stars">★★★☆☆</div>
+              <p>Cake taste was decent.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Anil Pandey</h5>
+              <span>2 years ago</span>
+              <div class="stars">★★★★★</div>
+              <p>Great quality.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Aviral Prakash</h5>
+              <span>2 years ago</span>
+              <div class="stars">★★★★★</div>
+              <p>Absolutely delicious.</p>
+            </div>
+          </div>
+
+          <!-- ROW 2 (EXACT DUPLICATE) -->
+          <div class="marquee-row">
+            <div class="review-card">
+              <h5>Pranav Shree</h5>
+              <span>a year ago</span>
+              <div class="stars">★☆☆☆☆</div>
+              <p>Delivery is never on time.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Himanshu Gupta</h5>
+              <span>a year ago</span>
+              <div class="stars">★★★☆☆</div>
+              <p>Cake taste was decent.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Anil Pandey</h5>
+              <span>2 years ago</span>
+              <div class="stars">★★★★★</div>
+              <p>Great quality.</p>
+            </div>
+
+            <div class="review-card">
+              <h5>Aviral Prakash</h5>
+              <span>2 years ago</span>
+              <div class="stars">★★★★★</div>
+              <p>Absolutely delicious.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Nine Section -- Footer-->
+  <footer class="footer-section">
+    <div class="container py-5">
+
+      <div class="row gy-4">
+
+        <!-- Left Column -->
+        <div class="col-lg-4 col-md-6">
+          <h3 class="footer-logo">Cake Delight</h3>
+          <p class="footer-text">
+            Cake Delight offers express delivery across Lucknow.<br>
+            Place your order before 8:00 PM, and we’ll deliver it <br>straight to your doorstep.
+            We ensure fresh <br> baking, careful packaging, and timely <br>
+            delivery so that every celebration <br> stays special.
+          </p>
+
+          <div class="footer-contact">
+            <p><i class="ri-mail-line"></i> info@cakedelight.in</p>
+            <p><i class="ri-phone-line"></i> +91 9876543210</p>
+          </div>
+        </div>
+
+        <!-- Know Us -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Know US</h5>
+          <ul class="footer-list">
+            <li><i class="ri-phone-line"></i> Contact US</li>
+            <li><i class="ri-map-pin-line"></i> Locate US</li>
+            <li><i class="ri-image-line"></i> Media</li>
+            <li><i class="ri-shopping-cart-line"></i> Why Choose Us?</li>
+          </ul>
+        </div>
+
+        <!-- Help -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">HELP</h5>
+          <ul class="footer-list">
+            <li>Privacy Policy</li>
+            <li>Customer Satisfaction</li>
+            <li>Terms & Condition</li>
+            <li>FAQ’s</li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-title">Social Links</h5>
+          <ul class="footer-social">
+            <li><i class="ri-instagram-line"></i> @cake_delight</li>
+            <li><i class="ri-facebook-circle-fill"></i> Cake Delight</li>
+            <li><i class="ri-whatsapp-line"></i> +91 9876543210</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      © 2026 cakedelight Pvt Ltd.
+    </div>
+  </footer>
+
+  <!--Whatsapp Fixed Button-->
+  <div class="whatsapp-widget">
+    <a href="https://wa.me/9714493873" target="_blank" class="whatsapp-link">
+      <span class="whatsapp-text">Chat with us</span>
+      <span class="whatsapp-icon">
+        <i class="ri-whatsapp-line"></i>
+      </span>
+    </a>
+  </div>
+
+  <!-- ══════════ QUICK VIEW MODAL ══════════ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalCloseBtn">✕</button>
+    <div class="modal-left">
+      <div class="modal-img-frame" id="modalImgFrame">
+        <img id="modalImg" src="" alt="Cake" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"/>
+        <div class="modal-img-decor"></div>
+      </div>
+      <div class="modal-badges" id="modalBadges"></div>
+    </div>
+    <div class="modal-right">
+      <div class="modal-eyebrow" id="modalEyebrow">🎂 Birthday</div>
+      <h2 class="modal-title" id="modalTitle">Cake Name</h2>
+      <div class="modal-rating-row" id="modalRating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">4.8</span>
+        <span class="rating-count">(230 reviews)</span>
+      </div>
+      <div class="modal-price-row">
+        <span class="modal-price" id="modalPrice">₹1,200</span>
+        <span class="modal-price-note" id="modalPriceNote">per piece</span>
+      </div>
+      <ul class="modal-features" id="modalFeatures"></ul>
+      <div class="modal-specs-wrap">
+        <p class="specs-heading">Product Details</p>
+        <div class="modal-specs" id="modalSpecs"></div>
+      </div>
+      <div class="modal-order-row">
+        <div class="qty-control">
+          <button class="qty-btn" id="qtyMinus">−</button>
+          <span class="qty-val" id="qtyVal">1</span>
+          <button class="qty-btn" id="qtyPlus">+</button>
+        </div>
+        <button class="btn-order-now">🛒 Order Now</button>
+        <button class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </button>
+      </div>
+      <div class="modal-delivery-note">
+        <span>🚚 Order before 2 PM for <strong>same-day delivery</strong></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast">🛒 Added to cart!</div>
+
+<div id="mobileShellRoot"></div>
+
+</body>
+
+<!-- Bootstrap JS -->
+<script src="./assets/bootstrap/BOOTSTRAP-JS/bootstrap.js"></script>
+<!-- Your JS -->
+<script src="./JS/filter.js"></script>
+<script src="./JS/header-safe.js"></script>
+<script src="./JS/quick-view.js"></script>
+<script src="./JS/order-routing.js"></script>
+<script src="./JS/site-shell.js"></script>
+<script src="./JS/mobileview.js"></script>
+<script src="./JS/order-routing.js"></script>
+<script src="./JS/wishlist.js"></script>
+<script src="./JS/catalogue.js"></script>
+
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=app-wishlist.html">
+  <script>
+    window.location.replace("app-wishlist.html");
+  </script>
+  <title>Cake Delight</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./assets/bootstrap/BOOTSTRAP-CSS/bootstrap.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/style2.css">
+  <link rel="stylesheet" href="./CSS/modal.css">
+  <link rel="stylesheet" href="./CSS/birthday-cake.css">
+  <link rel="stylesheet" href="./CSS/wishlist.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+  <!-- 2️ MAIN HEADER -->
+  <div class="main-header">
+    <div class="main-header__inner container">
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="BookMyCake Home">
+        <!-- <span class="logo__book">Book</span><span class="logo__my">my</span><span class="logo__cake">cake</span> -->
+        <img src="./assets/image/logo2.png" class="img-header-logo" alt="" />
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-bar" role="search">
+        <svg
+          class="search-bar__icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <input
+          class="search-bar__input"
+          type="search"
+          placeholder="Search for cakes, occasion, flavor and more"
+          aria-label="Search cakes"
+        />
+      </div>
+
+      <!-- Right Contact + Icons -->
+      <div class="header-right">
+        <!-- Email -->
+        <a
+          href="mailto:info@bookmycake.co"
+          class="header-contact"
+          aria-label="Email us"
+        >
+          <svg
+            class="header-contact__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="2,4 12,13 22,4" />
+          </svg>
+          <span class="header-contact__text">info@cakedelight.in</span>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+919870318105" class="header-contact" aria-label="Call us">
+          <svg
+            class="header-contact__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.42 19 19.45 19.45 0 0 1 5 12.59 19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14 15.83l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          <span class="header-contact__text">+91 9336002651</span>
+        </a>
+
+        <!-- Cart Icon -->
+        <button class="icon-btn" aria-label="View cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            />
+          </svg>
+        </button>
+
+        <!-- User/Account Icon -->
+        <button class="icon-btn" aria-label="My account">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </button>
+
+        <!-- Hamburger (mobile only) -->
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3️⃣ NAVIGATION BAR -->
+  <nav class="nav-bar" id="navBar" aria-label="Main navigation">
+    <div class="nav-bar__inner container">
+      <ul class="nav-list" role="list">
+        <li class="nav-list__item">
+          <a href="birthday-cake.html" class="nav-link">Birthday Cakes</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="Aniversary.html" class="nav-link">Anniversary</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="corporate.html" class="nav-link">Corporate Cakes</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="pastry.html" class="nav-link">Pastry &amp; Small Cakes</a>
+          
+          <section class="wishlist-page">
+
+    <h1 class="wishlist-title">Your Wishlist</h1>
+
+    <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+</section>
+        </li>
+        <li class="nav-list__item nav-list__item--dropdown">
+          <a
+            href="photo-cake.html"
+            class="nav-link nav-link--arrow"
+            aria-haspopup="true"
+          >
+            Photo Cakes
+            <svg
+              class="nav-link__chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <div class="dropdown" role="menu">
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Floral Theme</a
+            >
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Rustic Theme</a
+            >
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Unicorn Theme</a
+            >
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Galaxy Theme</a
+            >
+          </div>
+        </li>
+        <li class="nav-list__item nav-list__item--dropdown">
+          <a
+            href="other.html"
+            class="nav-link nav-link--arrow"
+            aria-haspopup="true"
+          >
+            Others
+            <svg
+              class="nav-link__chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </a>
+          <div class="dropdown" role="menu">
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Edible Print</a
+            >
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >3D Photo Cake</a
+            >
+            <a href="#" class="dropdown__item text-dark" role="menuitem"
+              >Portrait Cake</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    </header>
+    <!--Header Closed-->
+
+    <!-- Wishlist Page -->
+    <section class="wishlist-page">
+
+    <h1 class="wishlist-title">Your Wishlist</h1>
+
+    <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+      <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+      <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+      <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+      <!-- item -->
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    <div class="wish-card">
+        <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="">
+        <div class="wish-content">
+            <h3>Choco Pastry</h3>
+            <p>A creamy layered pastry with choco burst lava...</p>
+        </div>
+    </div>
+
+    </section>
+
+    <!-- Wishlist Page Closed-->
+
+    <!--Footer Starts-->
+
+    <!-- ===== MOBILE ONLY UI ===== -->
+<div class="mobile-app">
+
+  <!-- HEADER -->
+  <div class="mobile-header">
+    <img src="./assets/image/logo2.png" class="logo">
+
+    <div class="icons pt-2">
+      <i class="ri-shopping-cart-line"></i>
+      <i class="ri-user-line"></i>
+      <i class="ri-menu-line"></i>
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="mobile-search" id="mobileSearch">
+    <input type="text" placeholder="Search cakes..." />
+  </div>
+
+  <!-- CATEGORY -->
+  <div class="mobile-category" id="mobileCategory">
+    <a href="birthday-cake.html" class="nav-link">Birthday Cakes</a>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="mobile-bottom-nav">
+
+    <div class="nav-item" onclick="goHome()">
+      <i class="ri-home-4-line"></i>
+    </div>
+
+    <div class="nav-item" onclick="toggleCategory()">
+      <i class="ri-layout-grid-line"></i>
+    </div>
+
+    <div class="nav-item" onclick="toggleSearch()">
+      <i class="ri-search-line"></i>
+    </div>
+
+    <div class="nav-item" onclick="goWishlist()">
+      <i class="ri-heart-line"></i>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===== MOBILE ONLY UI CLOSED ===== -->
+
+</body>
+
+<!-- Bootstrap JS -->
+<script src="./assets/bootstrap/BOOTSTRAP-JS/bootstrap.js"></script>
+<!-- Your JS -->
+<script src="./JS/mobileview.js"></script>
+<script src="./JS/filter.js"></script>
+<script src="./JS/header.js"></script>
+<script src="./JS/collection.js"></script>
+<script src="./JS/birthday-cake.js"></script>
+<script src="./JS/catalogue.js"></script>
+
+</html>

@@ -1,0 +1,607 @@
+/* ══════════════════════════════════════════
+   CAKE CARD — FULLY FIXED & RESPONSIVE CSS
+   Sab comments Hinglish mein hain — easily
+   samajh aao aur edit karo!
+══════════════════════════════════════════ */
+
+/* Wishlist icon active hone par pink ho jaata hai */
+.icon-btn.wishlisted svg {
+  fill: var(--pink);
+  stroke: var(--pink);
+}
+
+/* ── Card base ── */
+.cake-card {
+  background: #ffffff;
+  border-radius: 20px;   /* ↑ badhao = zyada rounded corners, ↓ ghataao = sharp corners */
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* shadow ki intensity — last number badhao = gehri shadow */
+}
+
+/* Card hover par thoda upar uthta hai */
+.cake-card:hover {
+  transform: translateY(-6px); /* -6px = kitna upar uthega, badhao = zyada, ghataao = kam */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+/* ── Image wrapper ── */
+.cake-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1; /* Image hamesha square rahegi — change mat karna warna cards alag alag height ke ho jaayenge */
+}
+
+.cake-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Image crop hokar fit rahegi — "contain" karo toh white space aayega */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover par image thodi zoom hoti hai */
+.cake-card:hover .cake-img img {
+  transform: scale(1.05); /* 1.05 = 5% zoom — badhao jaise 1.10 = zyada zoom */
+}
+
+/* ── Dark overlay — hover par image ke upar kala layer ── */
+.cake-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* 0.55 = overlay ki darkness — 0.0 = bilkul transparent, 1.0 = poora kala */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.cake-img:hover::before {
+  opacity: 1; /* Hover par overlay dikhega */
+}
+
+/* ── Badge (Birthday / Anniversary label) ── */
+.cake-badge {
+  position: absolute;
+  top: 12px;   /* ↑ badhao = neeche jayega, ↓ ghataao = aur upar */
+  left: 12px;  /* ↑ badhao = right ki taraf, ↓ ghataao = aur left */
+  z-index: 3;
+  background: rgb(255, 0, 60); /* Badge ka color — yahan change karo */
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10px;   /* ↑ badhao = bada text */
+  font-weight: 600;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+/* ── Wishlist heart button ── */
+.cake-wish {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 36px;   /* ↑ badhao = bada circle button */
+  height: 36px;  /* width aur height same rakhna — warna oval banega */
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;  /* Heart icon ka size — badhao = bada heart */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Jab heart active ho — red ho jaata hai */
+.cake-wish.active {
+  background: rgb(255, 0, 60);
+  color: #fff;
+}
+
+/* ══════════════════════════════════════
+   🔥 MAIN FIX — Hover buttons container
+   Yahi woh jagah hai jahan buttons image
+   ke center mein stack hote hain
+══════════════════════════════════════ */
+.cake-hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Exact center mein rakhta hai — mat badlo */
+
+  display: flex;
+  flex-direction: column; /* Buttons ek ke neeche ek — "row" karo toh side by side ho jaayenge */
+  align-items: center;
+  gap: 8px; /* Dono buttons ke beech ki doori — badhao = zyada gap, ghataao = kam gap */
+
+  /* ✅ BUTTON WIDTH KA MASTER CONTROL
+     Yeh value dono buttons ki width control karta hai
+     ↑ Badhao (jaise 80%) = wide buttons
+     ↓ Ghataao (jaise 50%) = narrow/slim buttons
+     Abhi 60% hai — thode narrow hain */
+  width: 60%;
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Hover par buttons dikhte hain */
+.cake-img:hover .cake-hover {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Order Now Button ── */
+.order-btn {
+  width: 100%; /* Upar wale container (60%) ki poori width — width badlna ho toh upar .cake-hover mein badlo */
+  background: #ff1744;  /* Button ka red color — yahan change karo */
+  color: #fff;
+  border: none;
+
+  /* ✅ HEIGHT CONTROL — Yeh line sabse important hai
+     Pehla number = UPAR-NEECHE padding = BUTTON KI HEIGHT
+       ↑ Badhao (jaise 14px) = lamba/tall button
+       ↓ Ghataao (jaise 8px)  = chota/short button
+     Doosra number = LEFT-RIGHT padding = text ke side ka space
+       ↑ Badhao = zyada side space
+       ↓ Ghataao = kam side space                           */
+  padding: 10px 14px;
+
+  border-radius: 30px; /* ↑ badhao = zyada rounded (pill shape), ↓ ghataao = square edges */
+  font-size: 13px;     /* ↑ badhao = bada text, ↓ ghataao = chota text */
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap; /* Text ek hi line mein rahega — hata do toh wrap hoga */
+  transition: background 0.2s, transform 0.2s;
+}
+
+.order-btn:hover {
+  background: #d50032; /* Hover par thoda dark red — yahan change karo */
+  transform: scale(1.03); /* Hover par thoda bada — 1.03 = 3% bada */
+}
+
+/* ── Quick View Button ── */
+.view-btn {
+  width: 100%; /* Upar wale container (60%) ki poori width */
+  background: rgba(50, 50, 50, 0.80); /* Dark semi-transparent background
+                                          Last number = opacity:
+                                          0.0 = bilkul transparent, 1.0 = poora kala */
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.6); /* White border —
+                                               last number = border ki visibility
+                                               0.0 = invisible, 1.0 = solid white */
+
+  /* ✅ HEIGHT CONTROL
+     Pehla number = UPAR-NEECHE padding = BUTTON KI HEIGHT
+       ↑ Badhao (jaise 13px) = lamba button
+       ↓ Ghataao (jaise 7px)  = chota button
+     Order btn se 1px kam hai — dono same karna ho toh 10px kar do  */
+  padding: 9px 14px;
+
+  border-radius: 30px;
+  font-size: 13px;     /* ↑ badhao = bada text */
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.view-btn:hover {
+  background: rgba(30, 30, 30, 0.95); /* Hover par aur dark */
+  border-color: #fff;
+  transform: scale(1.03);
+}
+
+/* ── Card body (image ke neeche ka section) ── */
+.cake-body {
+  padding: 14px 16px 16px; /* Upar | Left-Right | Neeche — badhao = zyada space */
+}
+
+.cake-title {
+  font-size: 14px;   /* ↑ badhao = bada cake name */
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.cake-bottom {
+  display: flex;
+  justify-content: space-between; /* Price left, Rating right */
+  align-items: center;
+}
+
+.cake-price {
+  color: #ff2e63;    /* Price ka color — yahan change karo */
+  font-weight: 700;
+  font-size: 17px;   /* ↑ badhao = badi price */
+}
+
+.cake-rating {
+  color: #ffb400;    /* Stars ka color — yellow */
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.cake-rating span {
+  color: #555;
+  font-size: 12px;
+}
+
+/* ══════════════════════════════════════
+   QUICK VIEW MODAL CSS
+   Yeh modal tab khulta hai jab Quick View
+   button click hota hai
+══════════════════════════════════════ */
+:root {
+  --primary: rgb(255, 0, 60);              /* Poori site ka main red color — ek jagah change karo sab badal jaayega */
+  --primary-dark: rgb(200, 0, 45);         /* Hover states ke liye dark red */
+  --primary-light: rgba(255, 0, 60, 0.08); /* Light pink background badges ke liye */
+  --primary-glow: rgba(255, 0, 60, 0.25);  /* Button ke neeche glow shadow */
+  --gold: #f59e0b;                         /* Stars ka golden color */
+  --gold-light: #fef3c7;                   /* Bestseller badge background */
+  --cream: #fff9f5;                        /* Specs box background */
+  --dark: #1a0a0f;                         /* Dark headings ka color */
+  --text-muted: #9c7b84;                   /* Faded/grey text ka color */
+  --border: rgba(255,0,60,0.12);           /* Subtle pink borders */
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,10,15,0.65); /* Modal ke peeche ka dark background — last number = darkness */
+  backdrop-filter: blur(6px);      /* ↑ badhao = zyada blur background */
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;  /* ↑ badhao = wider modal */
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-columns: 360px 1fr; /* Left panel 360px fixed, right panel baaki jagah lega */
+  position: relative;
+  transform: scale(0.9) translateY(40px);
+  transition: transform 0.4s cubic-bezier(0.34,1.4,0.64,1);
+}
+.modal-overlay.active .modal-box {
+  transform: scale(1) translateY(0);
+}
+.modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  z-index: 10;
+  width: 38px; height: 38px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-close:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.modal-left {
+  background: linear-gradient(160deg, #fff0f3 0%, #ffe8ee 100%); /* Left panel ka pink gradient */
+  padding: 40px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  border-radius: 24px 0 0 24px;
+}
+.modal-img-frame {
+  width: 260px; height: 260px; /* Modal mein image ka size — dono same rakhna */
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(255,0,60,0.18);
+}
+.modal-img-decor {
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  border: 2px dashed rgba(255,0,60,0.2);
+  animation: spinDecor 20s linear infinite; /* 20s = ek chakkar kitni der mein — kam karo = fast spin */
+  pointer-events: none;
+}
+@keyframes spinDecor { to { transform: rotate(360deg); } }
+.modal-badges {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+}
+.m-badge {
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.modal-right {
+  padding: 40px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+}
+.modal-eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.modal-title {
+  font-size: 1.9rem; /* Modal mein cake ka naam — badhao = bada heading */
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.modal-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+.rating-num { font-weight: 700; font-size: 0.95rem; color: var(--dark); }
+.rating-count { font-size: 0.82rem; color: var(--text-muted); }
+.rating-badge {
+  background: var(--gold-light);
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.modal-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+.modal-price {
+  font-size: 2rem;   /* Modal mein price ka size — badhao = badi price */
+  font-weight: 700;
+  color: var(--primary);
+}
+.modal-price-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.modal-features {
+  list-style: none;
+  margin-bottom: 18px;
+  padding: 0;
+}
+.modal-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.88rem;
+  color: #3d1520;
+  border-bottom: 1px solid #fdf0f2;
+}
+.feat-icon {
+  width: 22px; height: 22px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+.specs-heading {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.modal-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns — ghataao jaise repeat(2,1fr) = 2 columns */
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.spec-box {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 8px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.spec-box:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.spec-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.spec-value { font-size: 0.86rem; font-weight: 700; color: var(--dark); }
+.modal-order-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.qty-control {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--border);
+  border-radius: 30px;
+  overflow: hidden;
+}
+.qty-btn {
+  background: transparent;
+  border: none;
+  width: 36px; height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s, color 0.15s;
+}
+.qty-btn:hover { background: var(--primary); color: #fff; }
+.qty-val {
+  width: 36px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.btn-order-now {
+  flex: 1;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px var(--primary-glow);
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-order-now:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: #25D366;
+  border: 2px solid #25D366;
+  border-radius: 30px;
+  padding: 11px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-whatsapp:hover { background: #25D366; color: #fff; }
+.modal-delivery-note {
+  background: linear-gradient(90deg, #fff0f3, #fff);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.modal-delivery-note strong { color: var(--primary); }
+.modal-box::-webkit-scrollbar,
+.modal-right::-webkit-scrollbar { width: 4px; }
+.modal-box::-webkit-scrollbar-thumb,
+.modal-right::-webkit-scrollbar-thumb {
+  background: rgba(255,0,60,0.2);
+  border-radius: 10px;
+}
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: #1a0a0f;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  z-index: 99999;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ══ RESPONSIVE — Mobile screens ke liye ══ */
+@media (max-width: 700px) {
+  .modal-box { grid-template-columns: 1fr; }              /* Mobile par ek column */
+  .modal-left { border-radius: 24px 24px 0 0; }           /* Top rounded corners */
+  .modal-specs { grid-template-columns: repeat(2,1fr); }  /* 4 se 2 columns ho jaate hain */
+  .modal-order-row { flex-direction: column; align-items: stretch; }
+  .btn-order-now, .btn-whatsapp { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 576px) {
+  .cake-hover {
+    width: min(78%, 220px);
+  }
+
+  .order-btn,
+  .view-btn {
+    white-space: normal;
+    min-height: 44px;
+  }
+
+  .cake-body {
+    padding: 14px;
+  }
+
+  .cake-title {
+    white-space: normal;
+    line-height: 1.5;
+    min-height: 42px;
+  }
+
+  .cake-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

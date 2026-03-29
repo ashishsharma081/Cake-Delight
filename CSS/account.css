@@ -1,0 +1,398 @@
+.cd-account-page {
+  background:
+    radial-gradient(circle at top left, rgba(255, 0, 60, 0.08), transparent 24%),
+    linear-gradient(180deg, #fff8fb 0%, #fff4f7 100%);
+  min-height: 100vh;
+  padding: 36px 0 72px;
+}
+
+.cd-account-wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.cd-account-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.9fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.cd-account-hero__intro,
+.cd-account-hero__summary,
+.cd-account-panel,
+.cd-account-history,
+.cd-account-shortcuts {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(216, 27, 78, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 24px 50px rgba(73, 24, 41, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.cd-account-hero__intro {
+  padding: 34px;
+}
+
+.cd-account-hero__eyebrow,
+.cd-account-panel__eyebrow,
+.cd-account-history__eyebrow {
+  margin: 0 0 10px;
+  color: #d81b4e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cd-account-hero__intro h1 {
+  margin: 0 0 12px;
+  color: #1e1016;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 700;
+}
+
+.cd-account-hero__intro p {
+  margin: 0;
+  max-width: 640px;
+  color: #694b57;
+  line-height: 1.75;
+}
+
+.cd-account-hero__points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.cd-account-hero__point {
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff6f9 0%, #ffffff 100%);
+  border: 1px solid rgba(216, 27, 78, 0.1);
+}
+
+.cd-account-hero__point strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #1e1016;
+  font-size: 1.05rem;
+}
+
+.cd-account-hero__point span {
+  color: #785c67;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cd-account-hero__summary {
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+}
+
+.cd-account-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cd-account-profile-badge__avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(216, 27, 78, 0.18), rgba(255, 174, 197, 0.22));
+  color: #d81b4e;
+  font-size: 1.45rem;
+}
+
+.cd-account-profile-badge__content h2,
+.cd-account-panel__head h2,
+.cd-account-history__head h2,
+.cd-account-shortcuts__head h2 {
+  margin: 0;
+  color: #1e1016;
+  font-size: 1.45rem;
+}
+
+.cd-account-profile-badge__content p,
+.cd-account-panel__head p,
+.cd-account-history__head p,
+.cd-account-shortcuts__head p {
+  margin: 6px 0 0;
+  color: #7a616b;
+  line-height: 1.6;
+}
+
+.cd-account-summary-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.cd-account-summary-item {
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: #fff7fa;
+  border: 1px solid rgba(216, 27, 78, 0.09);
+}
+
+.cd-account-summary-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8d6f7b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cd-account-summary-item strong,
+.cd-account-summary-item p {
+  margin: 0;
+  color: #1e1016;
+  line-height: 1.6;
+}
+
+.cd-account-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.8fr);
+  gap: 24px;
+}
+
+.cd-account-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.cd-account-panel,
+.cd-account-history,
+.cd-account-shortcuts {
+  padding: 28px;
+}
+
+.cd-account-panel__head,
+.cd-account-history__head,
+.cd-account-shortcuts__head {
+  margin-bottom: 22px;
+}
+
+.cd-account-form {
+  display: grid;
+  gap: 18px;
+}
+
+.cd-account-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cd-account-field {
+  display: grid;
+  gap: 8px;
+}
+
+.cd-account-field--full {
+  grid-column: 1 / -1;
+}
+
+.cd-account-field label {
+  color: #49313b;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.cd-account-field small {
+  color: #8a6a76;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.cd-account-field input,
+.cd-account-field textarea {
+  width: 100%;
+  border: 1px solid rgba(216, 27, 78, 0.14);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fffafb;
+  color: #1e1016;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cd-account-field input:focus,
+.cd-account-field textarea:focus {
+  border-color: rgba(216, 27, 78, 0.42);
+  box-shadow: 0 0 0 4px rgba(216, 27, 78, 0.08);
+}
+
+.cd-account-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cd-account-save {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #d81b4e 0%, #ff6a8f 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 16px 28px rgba(216, 27, 78, 0.24);
+}
+
+.cd-account-note {
+  color: #80606d;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.cd-history-list {
+  display: grid;
+  gap: 14px;
+}
+
+.cd-history-card {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff8fb 0%, #ffffff 100%);
+  border: 1px solid rgba(216, 27, 78, 0.09);
+}
+
+.cd-history-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.cd-history-card__top h3 {
+  margin: 0;
+  color: #1e1016;
+  font-size: 1rem;
+}
+
+.cd-history-card__top span {
+  color: #7f616b;
+  font-size: 0.88rem;
+}
+
+.cd-history-card__items {
+  margin: 0;
+  color: #6f5560;
+  line-height: 1.7;
+}
+
+.cd-history-card__footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cd-history-card__footer strong {
+  color: #d81b4e;
+  font-size: 1rem;
+}
+
+.cd-history-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #fff1f5;
+  color: #d81b4e;
+  font-weight: 700;
+}
+
+.cd-history-empty {
+  padding: 28px;
+  border-radius: 24px;
+  text-align: center;
+  background: #fff7fa;
+  border: 1px dashed rgba(216, 27, 78, 0.18);
+  color: #7a606b;
+}
+
+.cd-shortcut-list {
+  display: grid;
+  gap: 12px;
+}
+
+.cd-shortcut-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  color: #1e1016;
+  background: #fff8fb;
+  border: 1px solid rgba(216, 27, 78, 0.1);
+}
+
+.cd-shortcut-link i:first-child {
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(216, 27, 78, 0.08);
+  color: #d81b4e;
+  font-size: 1.1rem;
+}
+
+.cd-shortcut-link span {
+  flex: 1;
+  font-weight: 600;
+}
+
+.cd-shortcut-link i:last-child {
+  color: #a48b96;
+}
+
+@media (max-width: 992px) {
+  .cd-account-hero,
+  .cd-account-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-account-hero__points {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-account-page {
+    padding: 18px 0 120px;
+  }
+
+  .cd-account-wrap {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .cd-account-hero__intro,
+  .cd-account-hero__summary,
+  .cd-account-panel,
+  .cd-account-history,
+  .cd-account-shortcuts {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .cd-account-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

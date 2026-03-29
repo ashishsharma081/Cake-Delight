@@ -1,0 +1,243 @@
+.cd-contact-page {
+  background:
+    radial-gradient(circle at top right, rgba(255, 0, 60, 0.09), transparent 24%),
+    linear-gradient(180deg, #fff8fb 0%, #fff4f7 100%);
+  min-height: 100vh;
+  padding: 36px 0 72px;
+}
+
+.cd-contact-wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.cd-contact-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.cd-contact-hero__intro,
+.cd-contact-hero__support,
+.cd-contact-panel,
+.cd-contact-info-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(216, 27, 78, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 24px 50px rgba(73, 24, 41, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.cd-contact-hero__intro,
+.cd-contact-hero__support,
+.cd-contact-panel {
+  padding: 30px;
+}
+
+.cd-contact-eyebrow {
+  margin: 0 0 10px;
+  color: #d81b4e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cd-contact-hero__intro h1,
+.cd-contact-panel__head h2 {
+  margin: 0 0 12px;
+  color: #1e1016;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+.cd-contact-panel__head h2 {
+  font-size: 1.6rem;
+}
+
+.cd-contact-hero__intro p,
+.cd-contact-panel__head p,
+.cd-contact-hero__support p {
+  margin: 0;
+  color: #6e5560;
+  line-height: 1.75;
+}
+
+.cd-contact-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.cd-contact-pill,
+.cd-contact-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.cd-contact-pill {
+  background: #fff2f6;
+  color: #d81b4e;
+}
+
+.cd-contact-cta {
+  background: linear-gradient(135deg, #d81b4e 0%, #ff6a8f 100%);
+  color: #ffffff;
+  box-shadow: 0 16px 28px rgba(216, 27, 78, 0.24);
+}
+
+.cd-contact-hero__support {
+  display: grid;
+  gap: 14px;
+}
+
+.cd-contact-support-item {
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: #fff7fa;
+  border: 1px solid rgba(216, 27, 78, 0.1);
+}
+
+.cd-contact-support-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8b6b77;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cd-contact-support-item strong,
+.cd-contact-support-item p {
+  margin: 0;
+  color: #1e1016;
+  line-height: 1.6;
+}
+
+.cd-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 24px;
+}
+
+.cd-contact-info-list {
+  display: grid;
+  gap: 14px;
+}
+
+.cd-contact-info-card {
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+}
+
+.cd-contact-info-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(216, 27, 78, 0.08);
+  color: #d81b4e;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.cd-contact-info-card h3 {
+  margin: 0 0 6px;
+  color: #1e1016;
+  font-size: 1.05rem;
+}
+
+.cd-contact-info-card p,
+.cd-contact-info-card a {
+  margin: 0;
+  color: #6f5560;
+  line-height: 1.65;
+}
+
+.cd-contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.cd-contact-field {
+  display: grid;
+  gap: 8px;
+}
+
+.cd-contact-field label {
+  color: #49313b;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.cd-contact-field input,
+.cd-contact-field textarea {
+  width: 100%;
+  border: 1px solid rgba(216, 27, 78, 0.14);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fffafb;
+  color: #1e1016;
+  outline: none;
+  resize: vertical;
+  min-height: 54px;
+}
+
+.cd-contact-field textarea {
+  min-height: 150px;
+}
+
+.cd-contact-submit {
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 22px;
+  background: linear-gradient(135deg, #d81b4e 0%, #ff6a8f 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 16px 28px rgba(216, 27, 78, 0.24);
+}
+
+.cd-contact-status {
+  min-height: 24px;
+  color: #6f5560;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 992px) {
+  .cd-contact-hero,
+  .cd-contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-contact-page {
+    padding: 18px 0 120px;
+  }
+
+  .cd-contact-wrap {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .cd-contact-hero__intro,
+  .cd-contact-hero__support,
+  .cd-contact-panel {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .cd-contact-info-card {
+    padding: 18px;
+  }
+}

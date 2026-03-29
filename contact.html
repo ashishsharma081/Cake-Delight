@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Cake Delight</title>
+  <link rel="stylesheet" href="./assets/bootstrap/BOOTSTRAP-CSS/bootstrap.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="./CSS/style2.css">
+  <link rel="stylesheet" href="./CSS/app-shell.css">
+  <link rel="stylesheet" href="./CSS/contact.css">
+</head>
+<body>
+  <main class="cd-contact-page" id="contactPage">
+    <div class="cd-contact-wrap">
+      <section class="cd-contact-hero">
+        <div class="cd-contact-hero__intro">
+          <p class="cd-contact-eyebrow">Support centre</p>
+          <h1>Contact Cake Delight for orders, support and custom cake help.</h1>
+          <p>Reach our team through WhatsApp, email or the support form below. We have also added the store address directly on this page so it is easy to find from the hamburger menu.</p>
+
+          <div class="cd-contact-hero__actions">
+            <a class="cd-contact-cta" href="https://wa.me/919336002651" target="_blank" rel="noreferrer">
+              <i class="ri-whatsapp-line"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <a class="cd-contact-pill" href="mailto:info@cakedelight.in">
+              <i class="ri-mail-line"></i>
+              <span>Email support</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="cd-contact-hero__support">
+          <div class="cd-contact-support-item">
+            <span>WhatsApp</span>
+            <strong>+91 9336002651</strong>
+          </div>
+          <div class="cd-contact-support-item">
+            <span>Email</span>
+            <strong>info@cakedelight.in</strong>
+          </div>
+          <div class="cd-contact-support-item">
+            <span>Address</span>
+            <p>Indira Nagar, Lucknow, Uttar Pradesh</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="cd-contact-layout">
+        <article class="cd-contact-panel">
+          <div class="cd-contact-panel__head">
+            <p class="cd-contact-eyebrow">Query form</p>
+            <h2>Send your message</h2>
+            <p>Submit your name, email and query. We save it locally and open your email draft with all details already filled in.</p>
+          </div>
+
+          <form id="contactForm" class="cd-contact-form">
+            <div class="cd-contact-field">
+              <label for="contactName">Your name</label>
+              <input id="contactName" name="name" type="text" placeholder="Enter your full name">
+            </div>
+            <div class="cd-contact-field">
+              <label for="contactEmail">Your email</label>
+              <input id="contactEmail" name="email" type="email" placeholder="you@example.com">
+            </div>
+            <div class="cd-contact-field">
+              <label for="contactSubject">Subject</label>
+              <input id="contactSubject" name="subject" type="text" placeholder="Custom cake, delivery help, order update...">
+            </div>
+            <div class="cd-contact-field">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" placeholder="Tell Cake Delight what you need help with"></textarea>
+            </div>
+
+            <button class="cd-contact-submit" type="submit">Send query</button>
+            <p id="contactStatus" class="cd-contact-status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside class="cd-contact-info-list">
+          <article class="cd-contact-info-card">
+            <span class="cd-contact-info-card__icon"><i class="ri-phone-line"></i></span>
+            <div>
+              <h3>Call or WhatsApp support</h3>
+              <p><a href="tel:+919336002651">+91 9336002651</a></p>
+              <p>Fastest option for urgent order updates and same-day celebration help.</p>
+            </div>
+          </article>
+
+          <article class="cd-contact-info-card">
+            <span class="cd-contact-info-card__icon"><i class="ri-mail-send-line"></i></span>
+            <div>
+              <h3>Email Cake Delight</h3>
+              <p><a href="mailto:info@cakedelight.in">info@cakedelight.in</a></p>
+              <p>Best for design references, bulk order details and custom cake requirements.</p>
+            </div>
+          </article>
+
+          <article class="cd-contact-info-card">
+            <span class="cd-contact-info-card__icon"><i class="ri-map-pin-2-line"></i></span>
+            <div>
+              <h3>Visit or locate us</h3>
+              <p>Indira Nagar, Lucknow, Uttar Pradesh</p>
+              <p>Use this address for pickup coordination or location-based support queries.</p>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <div id="mobileShellRoot"></div>
+
+  <script src="./JS/site-shell.js"></script>
+  <script src="./JS/contact-page.js"></script>
+</body>
+</html>
